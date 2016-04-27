@@ -1,0 +1,26 @@
+#titulo {
+	color: red;
+    font-size: 30px;
+}
+#login {
+   background-image: url(../../image/idiomas.jpg);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   min-height: 100vh;
+   font-family: 'Roboto', sans-serif;
+}
+
+#formLogin {
+    margin-top: 120px;
+    background: white;
+    -moz-box-shadow: 0 0 15px 15px #0044cc;
+    -webkit-box-shadow: 0 0 15px 15px #0044cc;
+    box-shadow: 0 0 15px 15px #004;
+    padding: 20px;
+}
+
+body,
+html {
+   overflow: hidden;
+}

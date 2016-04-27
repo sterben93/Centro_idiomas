@@ -1,0 +1,17 @@
+.letramovil{
+    font-size: 12px;
+}
+
+#conterLista{
+    padding: 0;
+    border:solid 0px;
+}
+
+div.infoPersonal{
+    display: block;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,65 @@
+header{
+    margin-top: 10px;
+    text-align: center;
+    background-image: -ms-linear-gradient(left, #33942F 0%, #F2FCFF 100%);
+    background-image: -moz-linear-gradient(left, #33942F 0%, #F2FCFF 100%);
+    background-image: -o-linear-gradient(left, #33942F 0%, #F2FCFF 100%);
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #33942F), color-stop(100, #F2FCFF));
+    background-image: -webkit-linear-gradient(left, #33942F 0%, #F2FCFF 100%);
+    background-image: linear-gradient(to right, #33942F 0%, #F2FCFF 100%);
+}
+
+img{
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: auto;
+}
+
+.caja{
+    margin:0% 25%;
+}
+
+.cajaFoto {
+	margin-top:10px;
+    padding:10px;
+    background:#333333;
+    border-radius:20px 20px 0px 0px;
+}
+
+.cajaInfo{
+
+    background:#333333;
+    color:white
+}
+
+.cajaFoto:hover + .cajaInfo{
+    display: block;
+    transform: scale(1.1,1.1);
+    -webkit-box-shadow: 1px -8px 20px 0px rgba(169, 125, 77, 0.85);
+    -moz-box-shadow:    1px -8px 20px 0px rgba(169, 125, 77, 0.85);
+    box-shadow:         1px -8px 20px 0px rgba(169, 125, 77, 0.85);
+    z-index:9999;
+}
+
+#equipo{
+     background:black; color: white;
+}
+
+#perfiles {
+	background:rgb(77, 77, 77);
+}
+
+/*Media query*/
+@media screen and (max-width: 481px) {
+    .cajaFoto{
+        display: none;
+    }
+    .caja{
+        margin: auto;
+    }
+    .cajaInfo {
+	    display: block;
+    }
+}

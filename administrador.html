@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="administrador">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Pagina web para dar a conocer la información relacionada con los idiomas que Ofrece la Institución Tecnológico de Veracruz">
+        <meta name="keywords" content="idiomas, inglés, francés, alemán, chino">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Centro Idiomas</title>
+        <link rel="icon" href="image/icono.ico">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/flaticon.css">
+        <link rel="stylesheet" href="css/main/general.css">
+        <link rel="stylesheet" href="css/main/menu.css">
+        <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+        <script type="application/javascript" src="js/angular.min.js"></script>
+        <script type="application/javascript" src="js/angular-route.min.js"></script>
+        <script type="application/javascript" src="js/bootstrap.js"></script>
+        <script type="application/javascript" src="js/jquery.cookie.js"></script>
+        <script type="application/javascript" src="js/main/administrador.js"></script>
+        <script type="text/javascript" src="js/main/menu.js"></script>
+
+    </head>
+    <body style="background-color:#669999">
+                   <div class="row">
+                <footer style="background: rgb(0, 43, 128); margin-top:12px;">
+                    <p class="text-center">Centro de Idiomas del Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
+                </footer>
+            </div>
+        <nav class="navbar navbar-default sidebar" id="menu" role="navigation" ng-include src="'pruebas.html'">
+        </nav>
+        <div id="lista" class="row" style="width:100%; padding-right: 100px;" >
+            <table class="table" style="margin:30px; margin-right: 1000px; border:solid 1px black; background:white; box-shadow: 0 0 15px 15px #b3cccc;">
+                <thead>
+                    <tr class="text-center" style="background:#008055; color:white;">
+                        <th style="border:solid 1px black;" class="text-center">Id Usuario</th>
+                        <th style="border:solid 1px black;" class="text-center">Nombre</th>
+                        <th style="border:solid 1px black;" class="text-center">Correo</th>
+                        <th style="border:solid 1px black;" class="text-center"></th>
+                    </tr>
+                </thead>
+                <tbody id="listaAdmin">
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+
+        <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
+        <script>
+            var miAPlicacion = angular.module('administrador', []);
+
+        </script>
+    </body>
+
+</html>
