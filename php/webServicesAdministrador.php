@@ -12,6 +12,7 @@
  * @author rous
  */
 require './Administrador.php';
+require './Correo.php';
 $opcion = $_POST['salida'];
 
 switch ($opcion) {
@@ -81,7 +82,11 @@ switch ($opcion) {
         $admin->select_database();
         $resultado = mysql_fetch_array($admin->obtener_Contraseña($correo));
         $admin->close();
-        //falta enviar el correo
+        $correo = new Correo();
+        $correo->enviarEmail("Recuperacion de contraseña",
+                $correo,
+                "Recuperacion de contraseña de administrador",
+                "Su contraseña actual es: ".$resultado[password]);
         break;
 
     //Cambia el status de un administrador

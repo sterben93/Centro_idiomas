@@ -66,7 +66,7 @@ class Administrador extends Table {
      * @return Array
      */
     public function obtener_Contraseña($correo) {
-        $contrasena = "select Contraseña " .
+        $contrasena = "select Contraseña as password" .
                 "from Administradores " .
                 "where Correo ='" . $correo . "';";
         return $this->query(utf8_decode($contrasena));
