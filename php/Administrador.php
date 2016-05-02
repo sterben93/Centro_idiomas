@@ -16,7 +16,6 @@ class Administrador extends Table {
 
     public function __construct() {
         parent::__construct(TABLA_ADMINISTRADORES);
-        $this->campos = [ID_ADMINISTRADOR, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, CONTRASEÑA, CORREO, STATUS];
     }
 
     /**
@@ -28,14 +27,6 @@ class Administrador extends Table {
     }
 
     /**
-     * Metodo para guardar valores de un campo
-     * @param string $valor
-     */
-    public function set($valor) {
-        $this->valores[] = $valor;
-    }
-
-    /**
      * Metodo para realizar confirmar los datos obtenidos por un logeo
      * @param string $user
      * @param string $password
@@ -44,8 +35,9 @@ class Administrador extends Table {
     public function login($user, $password) {
         $login = "select count(*) as login " .
                 "from Administradores " .
-                "where idAdministrador='" . $user . "' and Contraseña='" . $password . "'and status = 1;";
-        return $this->query(utf8_decode($login));
+                "where idAdministrador='" . $user . "' and Contraseña='" . $password . "' and status = 1;";
+        echo $login;
+        return $this->query($login);
     }
 
     /**
@@ -66,10 +58,10 @@ class Administrador extends Table {
      * @return Array
      */
     public function obtener_Contraseña($correo) {
-        $contrasena = "select Contraseña as password" .
+        $contrasena = "select Contraseña as password " .
                 "from Administradores " .
                 "where Correo ='" . $correo . "';";
-        return $this->query(utf8_decode($contrasena));
+        return $this->query($contrasena);
     }
 
     /**
@@ -80,14 +72,14 @@ class Administrador extends Table {
         $admin_Status = "select *".
         " from ".TABLA_ADMINISTRADORES .
         " where ".STATUS."=0;";
-        return $this->query(utf8_decode($admin_Status));
+        return $this->query($admin_Status);
     }
 
     public function cambiar_Status($id_Admin){
-        $update_Status = "update ".TABLA_ADMINISTRADORES.
-        " set status = true ".
-        "where ".ID_ADMINISTRADOR."='".$id_Admin."';";
-        return $this->query(utf8_decode($update_Status));
+        $set=" status = 1 ";
+        $where= ID_ADMINISTRADOR."='".$id_Admin."';";
+        $this->update($set, $where);
+
     }
 
 }

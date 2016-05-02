@@ -28,8 +28,8 @@ class Correo {
     public function inicializa() {
         $this->email->SMTPDebug = 2;
         $this->email->isSMTP();
-        $email->Host = "smtp.gmail.com";
-        $email->Port = 587;
+        $this->email->Host = "smtp.gmail.com";
+        $this->email->Port = 587;
         $this->email->SMTPSecure = "ssl";
         $this->email->Port = 465;
         $this->email->SMTPAuth = true;
@@ -40,16 +40,14 @@ class Correo {
     }
     public function enviarEmail($fromName, $destinatario, $sujeto ,$cuerpo){
         $this->email->From = "rous.archer@gmail.com";
-        $email->FromName = "Confort house";
-        $email->addAddress("ivan_archer93@hotmail.com", "Recepient Name");
-        $email->isHTML(false);
-        $email->Subject = "pruebas";
-        $email->Body = "Prueba de body";
-        $email->AltBody = "Prueba de body";
-        if (!$email->send()) {
+        $this->email->FromName = $fromName;
+        $this->email->addAddress($destinatario, "Recepient Name");
+        $this->email->isHTML(false);
+        $this->email->Subject = utf8_decode($sujeto);
+        $this->email->Body = utf8_decode($cuerpo);
+        $this->email->AltBody = $cuerpo;
+        if (!$this->email->send()) {
             echo "Mailer Error: " . $email->ErrorInfo;
-        } else {
-            echo 'se hizo';
         }
 
     }

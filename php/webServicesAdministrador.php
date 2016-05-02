@@ -13,6 +13,7 @@
  */
 require './Administrador.php';
 require './Correo.php';
+
 $opcion = $_POST['salida'];
 
 switch ($opcion) {
@@ -55,13 +56,13 @@ switch ($opcion) {
         $admin->conectar();
         $admin->select_database();
 
-        $admin->set($usuario);
-        $admin->set($nombre);
-        $admin->set($apellido_paterno);
-        $admin->set($apellido_materno);
-        $admin->set($contraseña);
-        $admin->set($correo);
-        $admin->set(false);
+        $admin->set(ID_ADMINISTRADOR, $usuario);
+        $admin->set(NOMBRE, $nombre);
+        $admin->set(APELLIDO_PATERNO, $apellido_paterno);
+        $admin->set(APELLIDO_MATERNO, $apellido_materno);
+        $admin->set(CONTRASEÑA, $contraseña);
+        $admin->set(CORREO, $correo);
+        $admin->set(STATUS, 0);
         $resultado = $admin->insertar();
 
         $admin->close();
@@ -75,23 +76,18 @@ switch ($opcion) {
     //Opcion para obtener el la contraseña de un usuario
     case 3:
 
-        $correo = $_POST['correo'];
-
+        $email = $_POST['correo'];
         $admin = new Administrador();
         $admin->conectar();
         $admin->select_database();
-        $resultado = mysql_fetch_array($admin->obtener_Contraseña($correo));
+        $resultado = mysqli_fetch_array($admin->obtener_Contraseña($email));
         $admin->close();
         $correo = new Correo();
-        $correo->enviarEmail("Recuperacion de contraseña",
-                $correo,
-                "Recuperacion de contraseña de administrador",
-                "Su contraseña actual es: ".$resultado[password]);
+        $correo->enviarEmail("Centro de Idiomas de ITver", $email, 'Recuperacion de contraseña', 'Su contraseña es: ' . $resultado['password']);
         break;
 
     //Cambia el status de un administrador
     case 4:
-
         $id_Admin = $_POST['idAdmin'];
         $admin = new Administrador();
         $admin->conectar();
@@ -102,12 +98,11 @@ switch ($opcion) {
 
     //obtengo el nombre del usuario
     case 5:
-
         $usuario = $_POST['user'];
         $admin = new Administrador();
         $admin->conectar();
         $admin->select_database();
-        $resultado = mysql_fetch_array($admin->nombreUsuario($usuario));
+        $resultado = mysqli_fetch_array($admin->nombreUsuario($usuario));
         echo$resultado["Nombre_Completo"];
         break;
 
@@ -133,23 +128,14 @@ switch ($opcion) {
 
     //Elimina un administrador
     case 7:
-        /**
-         *     public function delete($where) {
-          $delete = "delete " . $this->nombre_Table() . ".*" .
-          " from " . $this->nombre_Table() .
-          " where " . $where . ";";
-          mysql_query(utf8_decode($delete))or die(mysql_error());
-          }
-         */
         $id_Admin = $_POST['idAdmin'];
         $admin = new Administrador();
         $admin->conectar();
         $admin->select_database();
-        $where = ID_ADMINISTRADOR." = '".$id_Admin."'";
+        $where = ID_ADMINISTRADOR . " = '" . $id_Admin . "'";
         $admin->delete($where);
         $admin->close();
         break;
 }
-
 ?>
 

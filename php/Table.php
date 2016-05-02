@@ -2,8 +2,6 @@
 
 require './Data_Base.php';
 
-use Data_Base;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -92,7 +90,7 @@ class Table extends Data_Base {
         }
 
         $query.= "');";
-        return mysql_query(utf8_decode($query))or die(mysql_error());
+        return $this->query($query);
     }
 
     /**
@@ -103,8 +101,7 @@ class Table extends Data_Base {
         $delete = "delete " . $this->nombre_Table() . ".*" .
                 " from " . $this->nombre_Table() .
                 " where " . $where . ";";
-        echo $delete;
-        mysql_query(utf8_decode($delete))or die(mysql_error());
+        return $this->query($delete);
     }
 
     /**
@@ -113,13 +110,16 @@ class Table extends Data_Base {
      * @return array
      */
     public function query($query) {
-        $resultados = mysql_query($query)or die(mysql_error());
+        $resultados = mysqli_query($this->getMysqli(), utf8_decode($query))or die(mysqli_error($this->getMysqli()));
         return $resultados;
     }
 
-
-    public function update() {
-
+    public function update($set, $where) {
+        $update = "update " . $this->nombre_Table() .
+                " set " . $set .
+                " where " . $where;
+        echo $update;
+        return $this->query($update);
     }
 
 }
