@@ -13,21 +13,27 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/main/general.css">
-    <link rel="stylesheet" href="css/main/menuAdministrador.css">
+    <link rel="stylesheet" href="css/main/menu.css">
     <script type="application/javascript" src="js/jquery-1.11.3.js"></script>
     <script type="application/javascript" src="js/angular.min.js"></script>
     <script type="application/javascript" src="js/angular.min.js"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <script type="application/javascript" src="js/jquery.cookie.js"></script>
+    <script type="application/javascript" src="js/main/menu.js"></script>
 </head>
 
 <body>
-    <header ng-include src="'nav.html'">
+    <header class="row container-fluid text-center" style="background:#201d1d; color:white">
+        <h1>Administración de Centro de Idiomas</h1>
     </header>
+    <!--Fin del header-->
+    <!--Inicio del nav-->
+    <nav class="navbar navbar-default sidebar" id="menu" role="navigation" ng-include src="'menu.html'">
+    </nav>
+    <!--inicio Seccion de la tabla de idiomas-->
+    <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
 
-    <footer style="background: rgb(0, 43, 128);">
-        <p class="text-center">Centro de Idiomas del Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
-    </footer>
+    </seccion>
 
     <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
     <script>

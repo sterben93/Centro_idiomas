@@ -25,8 +25,8 @@
 </head>
 
 <body>
-  <!--Inicio del header-->
-   <header class="row container-fluid text-center" style="background:#201d1d; color:white">
+    <!--Inicio del header-->
+    <header class="row container-fluid text-center" style="background:#201d1d; color:white">
         <h1>Administración de Centro de Idiomas</h1>
     </header>
     <!--Fin del header-->
@@ -36,20 +36,22 @@
     <!--fin del nav-->
     <!--Inicio de la seccion de la tabla-->
     <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
-       <h1 class="text-center">Administradores</h1>
-        <table class="table" style="margin:30px; margin-right: 1000px; border:solid 1px black; background:white; box-shadow: 0 0 15px 15px #b3cccc;">
-            <thead>
-                <tr class="text-center" style="background:#008055; color:white;">
-                    <th style="border:solid 1px black;" class="text-center">Id Usuario</th>
-                    <th style="border:solid 1px black;" class="text-center">Nombre</th>
-                    <th style="border:solid 1px black;" class="text-center">Correo</th>
-                    <th style="border:solid 1px black;" class="text-center"></th>
-                </tr>
-            </thead>
-            <tbody id="listaAdmin">
-
-            </tbody>
-        </table>
+        <h1 class="text-center">Administradores</h1>
+        <div class="table-responsive" style="margin-left:10px">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center" style="background:#008055; color:white;">
+                        <th style="border:solid 1px black;" class="text-center">Id Usuario</th>
+                        <th style="border:solid 1px black;" class="text-center">Nombre</th>
+                        <th style="border:solid 1px black;" class="text-center">Correo</th>
+                        <th style="border:solid 1px black;" class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaAdmin">
+                    <!--El contenido de la tabla se genera a partir de JQwery-->
+                </tbody>
+            </table>
+        </div>
     </seccion>
     <!--Fin de la seccion de la tabla-->
     <!--Inicio del footer-->
