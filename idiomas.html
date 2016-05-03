@@ -1,89 +1,59 @@
 <!DOCTYPE html>
 <html lang="es" ng-app="">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Pagina web para dar a conocer la información relacionada con los idiomas que Ofrece la Institución Tecnológico de Veracruz">
-        <meta name="keywords" content="idiomas, inglés, francés, alemán, chino">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Centro Idiomas</title>
-        <link rel="icon" href="image/icono.ico">
-        <link rel="stylesheet" href="css/bootstrap-theme.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/main/general.css">
-        <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-        <script type="application/javascript" src="js/angular.min.js"></script>
-        <script type="application/javascript" src="js/angular-route.min.js"></script>
-        <script type="application/javascript" src="js/bootstrap.js"></script>
-        <script type="application/javascript" src="js/jquery.cookie.js"></script>
-        <script type="application/javascript" src="js/main/administrador.js"></script>
-    </head>
-    <body>
-        <header ng-include src="'nav.html'">
-        </header>
-        <h1>Idiomas</h1>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Pagina web para dar a conocer la información relacionada con los idiomas que Ofrece la Institución Tecnológico de Veracruz">
+    <meta name="keywords" content="idiomas, inglés, francés, alemán, chino">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centro Idiomas</title>
+    <link rel="icon" href="image/icono.ico">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/main/general.css">
+    <link rel="stylesheet" href="css/main/menu.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="application/javascript" src="js/angular.min.js"></script>
+    <script type="application/javascript" src="js/angular-route.min.js"></script>
+    <script type="application/javascript" src="js/bootstrap.js"></script>
+    <script type="application/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/main/menu.js"></script>
 
-        <div class="container" id="lista">
-            <ul class="list-group" id="listaAdmin">
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                            <p>Ingles</p>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                            <button type="button" class="btn btn-default">Ver mas...</button>
-                            <button type="button" class="btn btn-default">Eliminar</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="container row">
-            <button type="button" class="btn btn-default">Agregar</button>
-        </div>
+</head>
 
+<body>
+   <div class="row container-fluid text-center" style="background:#201d1d; color:white">
+       <h1>Administración de Centro de Idiomas</h1>
+   </div>
+    <nav class="navbar navbar-default sidebar" id="menu" role="navigation" ng-include src="'menu.html'">
+    </nav>
+    <div id="lista" class="row" style="width:100%; padding-right: 100px;">
+       <h1 class="text-center">Idiomas</h1>
+        <table class="table" style="margin:30px; margin-right: 1000px; border:solid 1px black; background:white; box-shadow: 0 0 15px 15px #b3cccc;">
+            <thead>
+                <tr class="text-center" style="background:#008055; color:white;">
+                    <th style="border:solid 1px black;" class="text-center">Id Usuario</th>
+                    <th style="border:solid 1px black;" class="text-center">Nombre</th>
+                    <th style="border:solid 1px black;" class="text-center">Correo</th>
+                    <th style="border:solid 1px black;" class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody id="listaAdmin">
+            </tbody>
+        </table>
+    </div>
 
-
-
-        <!--Inicio del Modal para el registro de administradores-->
-        <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Registrar Administrador</h4>
-                    </div>
-                    <div class="modal-body">
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Fin del Modal para el registro de administradores-->
-        <footer style="background: rgb(0, 43, 128); margin-top:12px;">
-            <p class="text-center">Centro de Idiomas del Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
+    <div class="row">
+        <footer style="background:#201d1d; margin-top:12px; ">
+            <p class="text-center">Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
         </footer>
+    </div>
+    <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
+    <script>
+        var miAPlicacion = angular.module('', []);
+    </script>
+</body>
 
-        <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
-        <script>
-            var miAPlicacion = angular.module('administrador', []);
-
-        </script>
-        <script>
-            $(document).ready(function () {
-                $('button').click(function () {
-                    alert("Hola");
-                    $('.modal-body').html('a Huevo');
-                });
-            });
-
-        </script>
-    </body>
 </html>
-

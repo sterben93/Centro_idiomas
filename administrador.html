@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="administrador">
+<html lang="es" ng-app="">
 
 <head>
     <meta charset="utf-8">
@@ -25,14 +25,10 @@
 </head>
 
 <body>
-    <div class="row">
-        <footer style="background: rgb(0, 43, 128); margin-top:12px;">
-            <p class="text-center">Centro de Idiomas del Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
-        </footer>
-    </div>
-    <nav class="navbar navbar-default sidebar" id="menu" role="navigation" ng-include src="'pruebas.html'">
+    <nav class="navbar navbar-default sidebar" id="menu" role="navigation" ng-include src="'menu.html'">
     </nav>
     <div id="lista" class="row" style="width:100%; padding-right: 100px;">
+       <h1 class="text-center">Administradores</h1>
         <table class="table" style="margin:30px; margin-right: 1000px; border:solid 1px black; background:white; box-shadow: 0 0 15px 15px #b3cccc;">
             <thead>
                 <tr class="text-center" style="background:#008055; color:white;">
@@ -48,10 +44,14 @@
         </table>
 
     </div>
-
+    <div class="row">
+        <footer style="background: rgb(0, 43, 128); margin-top:12px; ">
+            <p class="text-center">Centro de Idiomas del Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
+        </footer>
+    </div>
     <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
     <script>
-        var miAPlicacion = angular.module('administrador', []);
+        var miAPlicacion = angular.module('', []);
     </script>
 </body>
 
