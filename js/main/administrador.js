@@ -1,5 +1,5 @@
 $(document).ready(function ($) {
-    $.post("http://localhost/Centro%20Idiomas/php/webServicesAdministrador.php", {salida: 6}, function (resultado) {
+    $.post("http://localhost/Backend/webServicesAdministrador.php", {salida: 6}, function (resultado) {
         $administradores = JSON.parse(resultado);
         $.each($administradores, function (index, administrador) {
             alert(administrador.nombreCompleto);
@@ -26,15 +26,15 @@ $(document).ready(function ($) {
             $('#listaAdmin').append(elemTr);
         });
         $('.aceptar').click(function () {
-            $.post("http://localhost/Centro%20Idiomas/php/webServicesAdministrador.php", {salida: 4, idAdmin: this.value}, function (resp) {
-                window.location.href = 'http://localhost/Centro%20Idiomas/administrador.html';
+            $.post("http://localhost/Backend/webServicesAdministrador.php", {salida: 4, idAdmin: this.value}, function (resp) {
+                window.location.href = 'http://localhost/Centro_Idiomas/administrador.html';
                 window.location.reload;
             });
 
         });
         $('.eliminar').click(function () {
-            $.post("http://localhost/Centro%20Idiomas/php/webServicesAdministrador.php", {salida: 7, idAdmin: this.value}, function (resp) {
-                window.location.href = 'http://localhost/Centro%20Idiomas/administrador.html';
+            $.post("http://localhost/Backend/webServicesAdministrador.php", {salida: 7, idAdmin: this.value}, function (resp) {
+                window.location.href = 'http://localhost/Centro_Idiomas/administrador.html';
                 window.location.reload;
             })
         });

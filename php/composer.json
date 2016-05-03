@@ -1,7 +1,0 @@
-{
-    "name": "rous",
-    "phpmailer/phpmailer": "~5.2",
-    "require": {
-        "phpmailer/phpmailer": "^5.2"
-    }
-}
