@@ -24,30 +24,323 @@
 </head>
 
 <body>
-   <div class="row container-fluid text-center" style="background:#201d1d; color:white">
-       <h1>Administración de Centro de Idiomas</h1>
-   </div>
+    <!--Inicio del header-->
+    <header class="row container-fluid text-center" style="background:#201d1d; color:white">
+        <h1>Administración de Centro de Idiomas</h1>
+    </header>
+    <!--Fin del header-->
+    <!--Inicio del nav-->
     <nav class="navbar navbar-default sidebar" id="menu" role="navigation" ng-include src="'menu.html'">
     </nav>
-    <div id="lista" class="row" style="width:100%; padding-right: 100px;">
-       <h1 class="text-center">Idiomas</h1>
+    <!--inicio Seccion de la tabla de idiomas-->
+    <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
+        <h1 class="text-center">Idiomas</h1>
         <table class="table" style="margin:30px; margin-right: 1000px; border:solid 1px black; background:white; box-shadow: 0 0 15px 15px #b3cccc;">
             <thead>
                 <tr class="text-center" style="background:#008055; color:white;">
-                    <th style="border:solid 1px black;" class="text-center">Id Usuario</th>
-                    <th style="border:solid 1px black;" class="text-center">Nombre</th>
-                    <th style="border:solid 1px black;" class="text-center">Correo</th>
-                    <th style="border:solid 1px black;" class="text-center"></th>
+                    <th style="border:solid 1px black;" class="text-center">Id Idioma</th>
+                    <th style="border:solid 1px black;" class="text-center">Idioma</th>
+                    <th style="border:solid 1px black;" class="text-center">Niveles</th>
+                    <th style="border:solid 1px black;" class="text-center">Objetivo</th>
+                    <th style="border:solid 1px black;" class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody id="listaAdmin">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEditar">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEliminar">
+                        <span class="glyphicon glyphicon-remove"></span>            
+                    </button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalInfo">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                    </button>
+                </td>
             </tbody>
         </table>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalRegistro">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+        <div class="container">
+  <div class="scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
+  <div class="scroller scroller-right"><i class="glyphicon glyphicon-chevron-right"></i></div>
+  <div class="wrapper">
+    <ul class="nav nav-tabs list" id="myTab">
+      <li class="active"><a href="#home">Home</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#messages">Messages</a></li>
+      <li><a href="#settings">Settings</a></li>
+      <li><a href="#">Tab4</a></li>
+      <li><a href="#">Tab5</a></li>
+      <li><a href="#">Tab6</a></li>
+      <li><a href="#">Tab7</a></li>
+      <li><a href="#">Tab8</a></li>
+      <li><a href="#">Tab9</a></li>
+      <li><a href="#">Tab10</a></li>
+      <li><a href="#">Tab11</a></li>
+	  <li><a href="#">Tab12</a></li>
+      <li><a href="#">Tab13</a></li>
+      <li><a href="#">Tab14</a></li>
+	  <li><a href="#">Tab15</a></li>
+      <li><a href="#">Tab16</a></li>
+      <li><a href="#">Tab17</a></li>
+  </ul>
+  </div>
+</div>
+    </seccion>
+    <!--Fin Seccion de la tabla de idiomas-->
+    <!--Inicio del Modal para el registro de idiomas-->
+    <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                </div>
+                <div class="modal-body">
+                   <!--Inicio del formulario para registrar idiomas-->
+                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistroIdioma">
+                        <div class="form-group">
+                            <label for="idioma">Idioma</label>
+                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
+                            <label for="niveles">Niveles</label>
+                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
+                            <label for="objetivo">Objetivo del curso</label>
+                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                            <label for="perfil_ingreso">Perfil de Ingreso</label>
+                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                            <label for="prefil_egreso">Perfil de Egreso</label>
+                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                            <label for="duracion">Duracion</label>
+                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
+                            <input type="text" value=1 name="salida" style="display:none">
+                        </div>
+                    </form>
+                    <!--Fin del formulario para registrar idiomas-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formRegistroidioma">Aceptar</button>
+                </div>
+            </div>
+        </div>
     </div>
+    <!--Fin del Modal para el registro de idiomas-->
 
+    <!--Inicio del Modal para el eliminacion de idioma-->
+    <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Eliminar Idioma</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistro">
+                        <div class="form-group">
+                            <p>Desea eliminar este registro</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin del Modal para el eliminar idioma-->
+    
+    <!--Inicio del Modal para el modificar el idioma-->
+    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formUpdate">
+                        <div class="form-group">
+                            <label for="idioma">Idioma</label>
+                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
+                            <label for="niveles">Niveles</label>
+                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
+                            <label for="objetivo">Objetivo del curso</label>
+                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                            <label for="perfil_ingreso">Perfil de Ingreso</label>
+                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                            <label for="prefil_egreso">Perfil de Egreso</label>
+                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                            <label for="duracion">Duracion</label>
+                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
+                            <input type="text" value=1 name="salida" style="display:none">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formUpdate">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Fin del Modal para el modificar el idioma-->
+    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistro">
+                        <div class="form-group">
+                            <label for="idioma">Idioma</label>
+                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
+                            <label for="niveles">Niveles</label>
+                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
+                            <label for="objetivo">Objetivo del curso</label>
+                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                            <label for="perfil_ingreso">Perfil de Ingreso</label>
+                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                            <label for="prefil_egreso">Perfil de Egreso</label>
+                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                            <label for="duracion">Duracion</label>
+                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
+                            <input type="text" value=1 name="salida" style="display:none">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
+       <script>
+           var hidWidth;
+var scrollBarWidths = 40;
+
+var widthOfList = function(){
+  var itemsWidth = 0;
+  $('.list li').each(function(){
+    var itemWidth = $(this).outerWidth();
+    itemsWidth+=itemWidth;
+  });
+  return itemsWidth;
+};
+
+var widthOfHidden = function(){
+  return (($('.wrapper').outerWidth())-widthOfList()-getLeftPosi())-scrollBarWidths;
+};
+
+var getLeftPosi = function(){
+  return $('.list').position().left;
+};
+
+var reAdjust = function(){
+  if (($('.wrapper').outerWidth()) < widthOfList()) {
+    $('.scroller-right').show();
+  }
+  else {
+    $('.scroller-right').hide();
+  }
+  
+  if (getLeftPosi()<0) {
+    $('.scroller-left').show();
+  }
+  else {
+    $('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
+  	$('.scroller-left').hide();
+  }
+}
+
+reAdjust();
+
+$(window).on('resize',function(e){  
+  	reAdjust();
+});
+
+$('.scroller-right').click(function() {
+  
+  $('.scroller-left').fadeIn('slow');
+  $('.scroller-right').fadeOut('slow');
+  
+  $('.list').animate({left:"+="+widthOfHidden()+"px"},'slow',function(){
+
+  });
+});
+
+$('.scroller-left').click(function() {
+  
+	$('.scroller-right').fadeIn('slow');
+	$('.scroller-left').fadeOut('slow');
+  
+  	$('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){
+  	
+  	});
+}); 
+    </script>
+     <style>
+        .wrapper {
+    position:relative;
+    margin:0 auto;
+    overflow:hidden;
+	padding:5px;
+  	height:50px;
+}
+
+.list {
+    position:absolute;
+    left:0px;
+    top:0px;
+  	min-width:3000px;
+  	margin-left:12px;
+    margin-top:0px;
+}
+
+.list li{
+	display:table-cell;
+    position:relative;
+    text-align:center;
+    cursor:grab;
+    cursor:-webkit-grab;
+    color:#efefef;
+    vertical-align:middle;
+}
+
+.scroller {
+  text-align:center;
+  cursor:pointer;
+  display:none;
+  padding:7px;
+  padding-top:11px;
+  white-space:no-wrap;
+  vertical-align:middle;
+  background-color:#fff;
+}
+
+.scroller-right{
+  float:right;
+}
+
+.scroller-left {
+  float:left;
+}
+        </style>
+      
         <footer style="background:#201d1d; margin-top:12px; ">
             <p class="text-center">Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
+             
         </footer>
     </div>
     <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->

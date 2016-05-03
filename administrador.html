@@ -25,9 +25,17 @@
 </head>
 
 <body>
+  <!--Inicio del header-->
+   <header class="row container-fluid text-center" style="background:#201d1d; color:white">
+        <h1>Administración de Centro de Idiomas</h1>
+    </header>
+    <!--Fin del header-->
+    <!--Inicio del nav-->
     <nav class="navbar navbar-default sidebar" id="menu" role="navigation" ng-include src="'menu.html'">
     </nav>
-    <div id="lista" class="row" style="width:100%; padding-right: 100px;">
+    <!--fin del nav-->
+    <!--Inicio de la seccion de la tabla-->
+    <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
        <h1 class="text-center">Administradores</h1>
         <table class="table" style="margin:30px; margin-right: 1000px; border:solid 1px black; background:white; box-shadow: 0 0 15px 15px #b3cccc;">
             <thead>
@@ -42,13 +50,15 @@
 
             </tbody>
         </table>
-
-    </div>
+    </seccion>
+    <!--Fin de la seccion de la tabla-->
+    <!--Inicio del footer-->
     <div class="row">
         <footer style="background: rgb(0, 43, 128); margin-top:12px; ">
             <p class="text-center">Centro de Idiomas del Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
         </footer>
     </div>
+    <!--Fin del footer-->
     <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
     <script>
         var miAPlicacion = angular.module('', []);

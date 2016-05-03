@@ -1,122 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Pagina web para dar a conocer la información relacionada con los idiomas que Ofrece la Institución Tecnológico de Veracruz">
-        <meta name="keywords" content="idiomas, inglés, francés, alemán, chino">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Centro Idiomas</title>
-        <link rel="icon" href="image/icono.ico">
-        <link rel="stylesheet" href="css/bootstrap-theme.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/main/login.css">
-        <link rel="stylesheet" href="css/progression.css">
-        <script type="application/javascript" src="js/jquery-1.11.3.js"></script>
-        <script type="application/javascript" src="js/bootstrap.js"></script>
-        <script type="application/javascript" src="js/progression.js"></script>
-        <script type="application/javascript" src="js/main/recursos.js"></script>
-        <script type="application/javascript" src="js/main/login.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Pagina web para dar a conocer la información relacionada con los idiomas que Ofrece la Institución Tecnológico de Veracruz">
+    <meta name="keywords" content="idiomas, inglés, francés, alemán, chino">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centro Idiomas</title>
+    <link rel="icon" href="image/icono.ico">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main/login.css">
+    <link rel="stylesheet" href="css/progression.css">
+    <script type="application/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="application/javascript" src="js/bootstrap.js"></script>
+    <script type="application/javascript" src="js/progression.js"></script>
+    <script type="application/javascript" src="js/main/recursos.js"></script>
+    <script type="application/javascript" src="js/main/login.js"></script>
+</head>
 
-    <body id="login">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-0 col-sm-4 col-md-4 col-lg-4">
-                </div>
-                <div class="col-xs-9 col-sm-4 col-md-4 col-lg-4">
-
-                    <!--Inicio del Formulario del login -->
-                    <form role="form" id="formLogin" action="http://localhost/Backend/webServicesAdministrador.php" method="post">
-                        <legend id="titulo">Administrador</legend>
-                        <div class="form-group">
-                            <label for="user">Usuario</label>
-                            <input type="text" class="form-control" placeholder="Usuario" id="user" required name="user" data-progression data-helper="El nombre del usuario es en mayúsculas y los caracteres son alfanuméricos" pattern="CI[A-Z]{3}[A-Z|0-9]{3}">
-                            <label for="contraseña">Contraseña</label>
-                            <input type="password" class="form-control" placeholder="********" id="contraseña" required name="password" data-progression data-helper="La contraseña del usuario debe de iniciar con la Primera letra en mayúscula y las demás son alfanuméricas. Tamaño mínimo 8 caracteres" >
-                            <input type="text" value=1 name="salida" style="display:none" >
-                            <br/>
-                            <span class="text-jutify" id="mensaje"></span>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <button type="submit" class="btn btn-primary" id="bt_Inicio" value='submit request'  title="prueba">Inicio Sesión</button>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <a href="#" data-toggle="modal" data-target="#modalContraseña">Olvide mi Contraseña</a>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <br/>
-                            <p class="text-center"><a href="" data-toggle="modal" data-target="#modalRegistro"  >Registrarse</a></p>
-                        </div>
-                    </form>
-                    <!--Fin del Formulario del login -->
-                </div>
+<body id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-0 col-sm-4 col-md-4 col-lg-4">
             </div>
+            <div class="col-xs-9 col-sm-4 col-md-4 col-lg-4">
 
-            <!--Inicio del Modal para el registro de administradores-->
-            <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Registrar Administrador</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form action="http://localhost/Backend/webServicesAdministrador.php" method="POST" role="form" id="formRegistro">
-                                <div class="form-group">
-                                    <label for="nombre">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required pattern="[A-Za-zñ]">
-                                    <label for="apellidos">Apellidos</label>
-                                    <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
-                                    <label for="contraseña2">Contraseña</label>
-                                    <input type="password" class="form-control" id="contraseña2" name="contraseña" placeholder="**********" required>
-                                    <label for="correo">Correo</label>
-                                    <input type="email" class="form-control" id="correo" name="correo" placeholder="administrador@dominio.com" required>
-                                    <input type="text" value=2 name="salida" style="display:none">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
-                        </div>
+                <!--Inicio del Formulario del login -->
+                <form role="form" id="formLogin" action="http://localhost/Backend/webServicesAdministrador.php" method="post">
+                    <legend id="titulo">Administrador</legend>
+                    <div class="form-group">
+                        <label for="user">Usuario</label>
+                        <input type="text" class="form-control" placeholder="Usuario" id="user" required name="user" data-progression data-helper="El nombre del usuario es en mayúsculas y los caracteres son alfanuméricos"
+                            pattern="CI[A-Z]{3}[A-Z|0-9]{3}">
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" class="form-control" placeholder="********" id="contraseña" required name="password" data-progression
+                            data-helper="La contraseña del usuario debe de iniciar con la Primera letra en mayúscula y las demás son alfanuméricas. Tamaño mínimo 8 caracteres">
+                        <input type="text" value=1 name="salida" style="display:none">
+                        <br/>
+                        <span class="text-jutify" id="mensaje"></span>
                     </div>
-                </div>
-            </div>
-            <!--Fin del Modal para el registro de administradores-->
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <button type="submit" class="btn btn-primary" id="bt_Inicio" value='submit request' title="prueba">Inicio Sesión</button>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <a href="#" data-toggle="modal" data-target="#modalContraseña">Olvide mi Contraseña</a>
+                        </div>
 
-            <!--Inicio del Modal para la solicitud de contraseña-->
-            <div class="modal fade" id="modalContraseña" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Olvide mi contraseña</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form action="http://localhost/Backend/webServicesAdministrador.php" method="POST" role="form" id="formContraseña">
-                                <div class="form-group">
-                                    <p>Para recuperar tu contraseña escribe aquí tu correo, para enviarte tu contraseña.</p>
-                                    <label for="correo2">Correo</label>
-                                    <input type="email" class="form-control" id="correo2" name="correo" placeholder="administrador@dominio.com" required>
-                                    <input type="text" value=3 name="salida" style="display:none">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary" form="formContraseña">Aceptar</button>
-                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <br/>
+                        <p class="text-center"><a href="" data-toggle="modal" data-target="#modalRegistro">Registrarse</a></p>
+                    </div>
+                </form>
+                <!--Fin del Formulario del login -->
             </div>
-            <!--Fin del Modal para la solicitud de contraseña-->
-
         </div>
-    </body>
+
+        <!--Inicio del Modal para el registro de administradores-->
+        <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Registrar Administrador</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="http://localhost/Backend/webServicesAdministrador.php" method="POST" role="form" id="formRegistro">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required pattern="[A-Za-zñ]">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+                                <label for="contraseña2">Contraseña</label>
+                                <input type="password" class="form-control" id="contraseña2" name="contraseña" placeholder="**********" required>
+                                <label for="correo">Correo</label>
+                                <input type="email" class="form-control" id="correo" name="correo" placeholder="administrador@dominio.com" required>
+                                <input type="text" value=2 name="salida" style="display:none">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin del Modal para el registro de administradores-->
+
+        <!--Inicio del Modal para la solicitud de contraseña-->
+        <div class="modal fade" id="modalContraseña" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Olvide mi contraseña</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="http://localhost/Backend/webServicesAdministrador.php" method="POST" role="form" id="formContraseña">
+                            <div class="form-group">
+                                <p>Para recuperar tu contraseña escribe aquí tu correo, para enviarte tu contraseña.</p>
+                                <label for="correo2">Correo</label>
+                                <input type="email" class="form-control" id="correo2" name="correo" placeholder="administrador@dominio.com" required>
+                                <input type="text" value=3 name="salida" style="display:none">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" form="formContraseña">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin del Modal para la solicitud de contraseña-->
+
+    </div>
+</body>
+
 </html>
 <!--Falta la validacion de los campos de los modales es decir hacer las expresiones regulares -->
