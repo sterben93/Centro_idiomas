@@ -11,230 +11,235 @@
     <link rel="icon" href="image/icono.ico">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/main/general.css">
-    <link rel="stylesheet" href="css/main/menu.css">
-    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/jquery-1.11.3.js"></script>
     <script type="application/javascript" src="js/angular.min.js"></script>
-    <script type="application/javascript" src="js/angular-route.min.js"></script>
+    <script type="application/javascript" src="js/angular.min.js"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <script type="application/javascript" src="js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="js/main/menu.js"></script>
-
+    <script type="application/javascript" src="js/main/menu.js"></script>
 </head>
 
 <body>
-    <!--Inicio del header-->
-    <header class="row container-fluid text-center" style="background:#201d1d; color:white">
-        <h1>Administración de Centro de Idiomas</h1>
-    </header>
-    <!--Fin del header-->
     <!--Inicio del nav-->
-    <nav class="navbar navbar-default sidebar" id="menu" role="navigation" ng-include src="'menu.html'">
-    </nav>
-    <!--inicio Seccion de la tabla de idiomas-->
-    <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
-    <h1 class="text-center">Idiomas</h1>
-    <div class="table-responsive" style="margin-left:10px">
-        <table class="table table-bordered">
-            <thead>
-                <tr class="text-center" style="background:#008055; color:white;">
-                    <th style="border:solid 1px black;" class="text-center">Id_Idioma</th>
-                    <th style="border:solid 1px black;" class="text-center">Idioma</th>
-                    <th style="border:solid 1px black;" class="text-center">Niveles</th>
-                    <th style="border:solid 1px black;" class="text-center">Objetivo del Curso</th>
-                    <th style="border:solid 1px black;" class="text-center">Perfil de Ingreso</th>
-                    <th style="border:solid 1px black;" class="text-center">Perfil de Egreso</th>
-                    <th style="border:solid 1px black;" class="text-center">Duracion</th>
-                    <th style="border:solid 1px black;" class="text-center">Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="listaAdmin">
-                <tr>
-                    <td>CIING</td>
-                    <td>Ingles</td>
-                    <td>5</td>
-                    <td>
-                        Formar estudiante con habildad para poder desarrollarse en un ambiente donde el idioma sea el ingles. El estudiante aplicara
-                        de manera fluida cuatro habilidades habla, escribir, leer y escuchar que seran adquiridas a travez
-                        de enseñanza-aprendizaje que buscan desarrollar las competencias comunicativas de los estudiantes
-                        en el idioma inglés.
-                    </td>
-                    <style>
+    <div class="wrapper">
+        <div id="wrapper">
+            <nav ng-include src="'menu.html'">
+            </nav>
+            <div id="page-wrapper">
 
-                    </style>
-                    <td>
-                        Profesionistas que requieran comunicarse hablando y escribiendo en inglés en diversos contextos laborales.
-                    </td>
-                    <td>
-                        Ser capaz de participar en conversaciones con cierta fluidez sobre diversos temas de la actualidad. Escribir y leer textos
-                        sobre sobre temas de interes con el objetivo de obtener informacion y poder defender sus ideales.
-                    </td>
-                    <td>75</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEditar">
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                            Publicaciones
+                        </h1>
+                        </div>
+                    </div>
+                    <!--inicio Seccion de la tabla de idiomas-->
+                    <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
+                        <h1 class="text-center">Idiomas</h1>
+                        <div class="table-responsive" style="margin-left:10px">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="text-center" style="background:#008055; color:white;">
+                                        <th style="border:solid 1px black;" class="text-center">Id_Idioma</th>
+                                        <th style="border:solid 1px black;" class="text-center">Idioma</th>
+                                        <th style="border:solid 1px black;" class="text-center">Niveles</th>
+                                        <th style="border:solid 1px black;" class="text-center">Objetivo del Curso</th>
+                                        <th style="border:solid 1px black;" class="text-center">Perfil de Ingreso</th>
+                                        <th style="border:solid 1px black;" class="text-center">Perfil de Egreso</th>
+                                        <th style="border:solid 1px black;" class="text-center">Duracion</th>
+                                        <th style="border:solid 1px black;" class="text-center">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listaAdmin">
+                                    <tr>
+                                        <td>CIING</td>
+                                        <td>Ingles</td>
+                                        <td>5</td>
+                                        <td>
+                                            Formar estudiante con habildad para poder desarrollarse en un ambiente donde el idioma sea el ingles. El estudiante aplicara
+                                            de manera fluida cuatro habilidades habla, escribir, leer y escuchar que seran
+                                            adquiridas a travez de enseñanza-aprendizaje que buscan desarrollar las competencias
+                                            comunicativas de los estudiantes en el idioma inglés.
+                                        </td>
+                                        <style>
+
+                                        </style>
+                                        <td>
+                                            Profesionistas que requieran comunicarse hablando y escribiendo en inglés en diversos contextos laborales.
+                                        </td>
+                                        <td>
+                                            Ser capaz de participar en conversaciones con cierta fluidez sobre diversos temas de la actualidad. Escribir y leer textos
+                                            sobre sobre temas de interes con el objetivo de obtener informacion y poder defender
+                                            sus ideales.
+                                        </td>
+                                        <td>75</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEditar">
                         <span class="glyphicon glyphicon-edit"></span>
                     </button>
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEliminar">
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEliminar">
                         <span class="glyphicon glyphicon-remove"></span>            
                     </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row">
-        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalRegistro">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalRegistro">
             Agregar <span class="glyphicon glyphicon-plus"></span>
         </button>
-        </div>
-    </div>
-</seccion>
-    <!--Fin Seccion de la tabla de idiomas-->
-    <!--Inicio del Modal para el registro de idiomas-->
-    <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
-                </div>
-                <div class="modal-body">
-                    <!--Inicio del formulario para registrar idiomas-->
-                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistroIdioma">
-                        <div class="form-group">
-                            <label for="idioma">Idioma</label>
-                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
-                            <label for="niveles">Niveles</label>
-                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
-                            <label for="objetivo">Objetivo del curso</label>
-                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
-                            <label for="perfil_ingreso">Perfil de Ingreso</label>
-                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
-                            <label for="prefil_egreso">Perfil de Egreso</label>
-                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
-                            <label for="duracion">Duracion</label>
-                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
-                            <input type="text" value=1 name="salida" style="display:none">
+                            </div>
                         </div>
-                    </form>
-                    <!--Fin del formulario para registrar idiomas-->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" form="formRegistroidioma">Aceptar</button>
+                    </seccion>
+                    <!--Fin Seccion de la tabla de idiomas-->
+                    <!--Inicio del Modal para el registro de idiomas-->
+                    <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!--Inicio del formulario para registrar idiomas-->
+                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistroIdioma">
+                                        <div class="form-group">
+                                            <label for="idioma">Idioma</label>
+                                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
+                                            <label for="niveles">Niveles</label>
+                                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
+                                            <label for="objetivo">Objetivo del curso</label>
+                                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="perfil_ingreso">Perfil de Ingreso</label>
+                                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="prefil_egreso">Perfil de Egreso</label>
+                                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="duracion">Duracion</label>
+                                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
+                                            <input type="text" value=1 name="salida" style="display:none">
+                                        </div>
+                                    </form>
+                                    <!--Fin del formulario para registrar idiomas-->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" form="formRegistroidioma">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Fin del Modal para el registro de idiomas-->
+
+                    <!--Inicio del Modal para el eliminacion de idioma-->
+                    <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Eliminar Idioma</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistro">
+                                        <div class="form-group">
+                                            <p>Desea eliminar este registro</p>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Fin del Modal para el eliminar idioma-->
+
+                    <!--Inicio del Modal para el modificar el idioma-->
+                    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formUpdate">
+                                        <div class="form-group">
+                                            <label for="idioma">Idioma</label>
+                                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
+                                            <label for="niveles">Niveles</label>
+                                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
+                                            <label for="objetivo">Objetivo del curso</label>
+                                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="perfil_ingreso">Perfil de Ingreso</label>
+                                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="prefil_egreso">Perfil de Egreso</label>
+                                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="duracion">Duracion</label>
+                                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
+                                            <input type="text" value=1 name="salida" style="display:none">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" form="formUpdate">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Fin del Modal para el modificar el idioma-->
+                    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistro">
+                                        <div class="form-group">
+                                            <label for="idioma">Idioma</label>
+                                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
+                                            <label for="niveles">Niveles</label>
+                                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
+                                            <label for="objetivo">Objetivo del curso</label>
+                                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="perfil_ingreso">Perfil de Ingreso</label>
+                                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="prefil_egreso">Perfil de Egreso</label>
+                                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="duracion">Duracion</label>
+                                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
+                                            <input type="text" value=1 name="salida" style="display:none">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-    <!--Fin del Modal para el registro de idiomas-->
-
-    <!--Inicio del Modal para el eliminacion de idioma-->
-    <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Eliminar Idioma</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistro">
-                        <div class="form-group">
-                            <p>Desea eliminar este registro</p>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Fin del Modal para el eliminar idioma-->
-
-    <!--Inicio del Modal para el modificar el idioma-->
-    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formUpdate">
-                        <div class="form-group">
-                            <label for="idioma">Idioma</label>
-                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
-                            <label for="niveles">Niveles</label>
-                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
-                            <label for="objetivo">Objetivo del curso</label>
-                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
-                            <label for="perfil_ingreso">Perfil de Ingreso</label>
-                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
-                            <label for="prefil_egreso">Perfil de Egreso</label>
-                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
-                            <label for="duracion">Duracion</label>
-                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
-                            <input type="text" value=1 name="salida" style="display:none">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" form="formUpdate">Aceptar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Fin del Modal para el modificar el idioma-->
-    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistro">
-                        <div class="form-group">
-                            <label for="idioma">Idioma</label>
-                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
-                            <label for="niveles">Niveles</label>
-                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
-                            <label for="objetivo">Objetivo del curso</label>
-                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
-                            <label for="perfil_ingreso">Perfil de Ingreso</label>
-                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
-                            <label for="prefil_egreso">Perfil de Egreso</label>
-                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
-                            <label for="duracion">Duracion</label>
-                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
-                            <input type="text" value=1 name="salida" style="display:none">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-
-        <footer style="background:#201d1d; margin-top:12px; ">
-            <p class="text-center">Tecnologico Nacional de Mexico Instituto Tecnologico de Veracruz</p>
-
-        </footer>
-    </div>
-    <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
     <script>
-        var miAPlicacion = angular.module('', []);
+        var miAPlicacion = angular.module('include', []);
     </script>
 </body>
 

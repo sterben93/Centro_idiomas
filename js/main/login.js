@@ -3,13 +3,13 @@ $(document).ready(function () {
     mensajeAyuda(formulario);
     var urlActual = window.location.toString().split("=");
     if (urlActual[1] == 0) {
-        $("#mensaje").html("Usuario o Contraseña Incorrecta o tu usuario no a sido dado de alta");
+        $("#mensaje").html("Usuario o Contraseña Incorrecta");
     } else {
         $("#mensaje").html("");
     }
 
     if (urlActual[1] == 'ok') {
-        alert("Tu usuario a sido enviado a tu correo");
+        alert("Tu registro se llevo a cabo. Su usuario sera enviado a su correo cuando un administrador acepte tu solicitud");
     }
 
     $('input').change(function () {

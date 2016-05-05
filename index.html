@@ -1,49 +1,190 @@
 <!DOCTYPE html>
 <html lang="es" ng-app="">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Centro de Idiomas</title>
-        <link rel="stylesheet" href="css/bootstrap-theme.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/main/index.css">
-        <link rel="stylesheet" href="css/jcarousel.responsive.css">
-        <script type="application/javascript" src="js/jquery-1.11.3.js"></script>
-        <script type="application/javascript" src="js/angular.min.js"></script>
-        <script type="application/javascript" src="js/angular-route.min.js"></script>
-        <script type="application/javascript" src="js/bootstrap.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centro de Idiomas</title>
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main/index.css">
+    <script type="application/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="application/javascript" src="js/angular.min.js"></script>
+    <script type="application/javascript" src="js/angular-route.min.js"></script>
+    <script type="application/javascript" src="js/bootstrap.js"></script>
 
-    </head>
+</head>
 
-    <body>
-        <!--Inicio Header-->
-        <header class="row container-fluid" id="encabezado" style='background-image: url("image/header.png");'>
-            <p>hdahsdkasjhdkajshdkkjh</p>
-            <p>hdahsdkasjhdkajshdkkjh</p>
-            <p>hdahsdkasjhdkajshdkkjh</p>
-            <p>hdahsdkasjhdkajshdkkjh</p>
-            <p>hdahsdkasjhdkajshdkkjh</p>
-            <p>hdahsdkasjhdkajshdkkjh</p>
+<body>
+    <header id="header" role="banner">
+        <div class="container">
+            <div id="navbar" class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#main-slider"><i class="icon-home"></i></a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
 
-        </header>
-        <!--Fin Header-->
+    <section id="main-slider" class="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>Centro de Idioma del Instituto Tecnologico de Veracruz</h1>
+                        <p class="lead">Xeon is the best free onepage responsive theme available arround the globe<br>Download it right now
+                            for free</p>
+                    </div>
+                </div>
+            </div>
+            <!--/.item-->
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>ShapeBootstrap.net</h1>
+                        <p class="lead">Download free but 100% premium quaility twitter Bootstrap based WordPress and HTML themes <br>from
+                            shapebootstrap.net
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/.item-->
+        </div>
+        <!--/.carousel-inner-->
+        <a class="prev" href="#main-slider" data-slide="prev"><i class="icon-angle-left"></i></a>
+        <a class="next" href="#main-slider" data-slide="next"><i class="icon-angle-right"></i></a>
+    </section>
+    <!--/#main-slider-->
 
-        <nav ng-include src="'nav.html'">
-        </nav>
-        <section>
+    <section id="services">
+        <div class="container">
+            <div class="box first">
+                <div class="row">
+                    <a href="">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="center">
+                                <img src="image/banderas/bandera%20de%20alemania" class="img-rounded" alt="Bandera Alemania" width="80" height="80">
+                                <br/>
 
-        </section>
-        <!--Inicio del Footer-->
-        <footer ng-include src="'footer.html'">
+                                <h2>Aleman</h2>
+                            </div>
+                        </div>
+                        <!--/.col-md-4-->
+                    </a>
+                    <a href="#">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="center">
+                                <img src="image/banderas/bandera%20de%20china" class="img-rounded" alt="Bandera China" width="80" height="80">
+                                <br/>
+
+                                <h2>Chino</h2>
+                            </div>
+                        </div>
+                        <!--/.col-md-4-->
+                    </a>
+                    <a href="">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="center">
+                                <img src="image/banderas/bandera%20de%20francia" class="img-rounded" alt="bandera de francia" width="80" height="80">
+                                <br/>
+                                <h2>Frances</h2>
+                            </div>
+                        </div>
+                        <!--/.col-md-4-->
+                    </a>
+                    <a href="">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="center">
+                                <img src="image/banderas/bandera%20de%20inglaterra" class="img-rounded" alt="Bandera de Inglaterra" width="80" height="80">
+                                <br/>
+                                <br/>
+                                <h2>Ingles</h2>
+                            </div>
+                        </div>
+                        <!--/.col-md-4-->
+                    </a>
+                    <a href="">
+                        <div class="col-md-4 col-sm-6">
+
+                        </div>
+                        <!--/.col-md-4-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="center">
+                                <img src="image/banderas/bandera%20de%20italia" class="img-rounded" alt="Bandera de Italia" width="80" height="80">
+                                <br/>
+                                <br/>
+                                <h2>Aleman</h2>
+                            </div>
+                        </div>
+                        <!--/.col-md-4-->
+                    </a>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.box-->
+        </div>
+        <!--/.container-->
+    </section>
+    <!--/#services-->
+    <style>
+        div > footer {
+            margin-top: 10px;
+            border-radius: 70px 70px 0px 0px;
+            padding-top: 20px;
+        }
+    </style>
+    <div class="container-fluid">
+        <footer id="footer" class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div>
+                    <img src="[ENTER IMAGE HERE]" class="img-circle" alt="Cinque Terre" width="304" height="236">
+                </div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+            </div>
+
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div>
+                    <img src="[ENTER IMAGE HERE]" class="img-circle" alt="Cinque Terre" width="304" height="236">
+                </div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div>
+                    <img src="[ENTER IMAGE HERE]" class="img-circle" alt="Cinque Terre" width="304" height="236">
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+            </div>
         </footer>
-        <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
-        <script>
-            var miAPlicacion = angular.module('include', []);
-        </script>
-    </body>
+    </div>
+</body>
 
 </html>
