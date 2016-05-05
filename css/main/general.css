@@ -217,3 +217,13 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+footer{
+                color: white;
+                width: 100%;
+                background: black;
+                position: fixed;
+                bottom: 0px;
+                left:0px;
+                font-size: 20px;
+                }
