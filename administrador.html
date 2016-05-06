@@ -24,7 +24,7 @@
 
 <body>
     <div id="wrapper">
-       <!-- Inicion del menu de navegacion el contenido esta incluido en meenu.html -->
+        <!-- Inicion del menu de navegacion el contenido esta incluido en meenu.html -->
         <nav ng-include src="'menu.html'">
         </nav>
         <!-- Fin del menu de navegacion -->
@@ -39,36 +39,25 @@
                     </div>
                 </header>
                 <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
-                <div class="table-responsive" style="margin-left:10px">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr class="text-center" style="background:#008055; color:white;">
-                                <th style="border:solid 1px black;" class="text-center">Id Usuario</th>
-                                <th style="border:solid 1px black;" class="text-center">Nombre</th>
-                                <th style="border:solid 1px black;" class="text-center">Correo</th>
-                                <th style="border:solid 1px black;" class="text-center">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="listaAdmin">
-                            <!--El contenido de la tabla se genera a partir de JQwery-->
-                        </tbody>
-                    </table>
-                </div>
-            </seccion>
-            <style>
-            footer{
-                color: white;
-                width: 100%;
-                background: black;
-                position: fixed;
-                bottom: 0px;
-                left:0px;
-                font-size: 20px;
-                }
-            </style>
-            <footer class="text-center container-fluid">
-            Tecnologico Nacional de Mexico Instituto Tecnologioco de Veracruz
-        </footer>
+                    <div class="table-responsive" style="margin-left:10px">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="text-center" style="background:#008055; color:white;">
+                                    <th style="border:solid 1px black;" class="text-center">Id Usuario</th>
+                                    <th style="border:solid 1px black;" class="text-center">Nombre</th>
+                                    <th style="border:solid 1px black;" class="text-center">Correo</th>
+                                    <th style="border:solid 1px black;" class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listaAdmin">
+                                <!--El contenido de la tabla se genera a partir de JQwery-->
+                            </tbody>
+                        </table>
+                    </div>
+                </seccion>
+                <footer class="text-center container-fluid">
+                    Tecnologico Nacional de Mexico Instituto Tecnologioco de Veracruz
+                </footer>
             </div>
 
         </div>

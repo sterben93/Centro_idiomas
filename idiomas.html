@@ -61,10 +61,7 @@
                                         <td>Ingles</td>
                                         <td>5</td>
                                         <td>
-                                            Formar estudiante con habildad para poder desarrollarse en un ambiente donde el idioma sea el ingles. El estudiante aplicara
-                                            de manera fluida cuatro habilidades habla, escribir, leer y escuchar que seran
-                                            adquiridas a travez de enseñanza-aprendizaje que buscan desarrollar las competencias
-                                            comunicativas de los estudiantes en el idioma inglés.
+                                            Formar estudiante con habildad para poder desarrollarse en un ambiente donde el idioma sea el ingles. El estudiante aplicara de manera fluida cuatro habilidades habla, escribir, leer y escuchar que seran adquiridas a travez de enseñanza-aprendizaje que buscan desarrollar las competencias comunicativas de los estudiantes en el idioma inglés.
                                         </td>
                                         <style>
 
@@ -73,18 +70,16 @@
                                             Profesionistas que requieran comunicarse hablando y escribiendo en inglés en diversos contextos laborales.
                                         </td>
                                         <td>
-                                            Ser capaz de participar en conversaciones con cierta fluidez sobre diversos temas de la actualidad. Escribir y leer textos
-                                            sobre sobre temas de interes con el objetivo de obtener informacion y poder defender
-                                            sus ideales.
+                                            Ser capaz de participar en conversaciones con cierta fluidez sobre diversos temas de la actualidad. Escribir y leer textos sobre sobre temas de interes con el objetivo de obtener informacion y poder defender sus ideales.
                                         </td>
                                         <td>75</td>
                                         <td class="text-center">
                                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEditar">
-                        <span class="glyphicon glyphicon-edit"></span>
-                    </button>
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
                                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEliminar">
-                        <span class="glyphicon glyphicon-remove"></span>            
-                    </button>
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -95,8 +90,8 @@
                             </div>
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalRegistro">
-            Agregar <span class="glyphicon glyphicon-plus"></span>
-        </button>
+                                    Agregar <span class="glyphicon glyphicon-plus"></span>
+                                </button>
                             </div>
                         </div>
                     </seccion>
@@ -114,17 +109,15 @@
                                     <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistroIdioma">
                                         <div class="form-group">
                                             <label for="idioma">Idioma</label>
-                                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
+                                            <input type="text" class="form-control" id="idioma" name="Idiomas" placeholder="Idioma" required>
                                             <label for="niveles">Niveles</label>
-                                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
+                                            <input type="text" class="form-control" id="niveles" name="Niveles" placeholder="Niveles" required>
                                             <label for="objetivo">Objetivo del curso</label>
-                                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                                            <textarea name="Objetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
                                             <label for="perfil_ingreso">Perfil de Ingreso</label>
-                                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                                            <textarea name="Perfil_Ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
                                             <label for="prefil_egreso">Perfil de Egreso</label>
-                                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
-                                            <label for="duracion">Duracion</label>
-                                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
+                                            <textarea name="Perfil_Egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
                                             <input type="text" value=1 name="salida" style="display:none">
                                         </div>
                                     </form>
@@ -132,7 +125,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" form="formRegistroidioma">Aceptar</button>
+                                    <button type="submit" class="btn btn-primary" form="formRegistroIdioma">Aceptar</button>
                                 </div>
                             </div>
                         </div>
