@@ -4,7 +4,6 @@ $(document).ready(function ($) {
     }, function (resultado) {
         $administradores = JSON.parse(resultado);
         $.each($administradores, function (index, administrador) {
-            alert(administrador.nombreCompleto);
             var elemTr = $("<tr/>");
             var elemTD1 = $("<th/>", {
                 "html": administrador.idAdministrador

@@ -19,6 +19,7 @@
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <script type="application/javascript" src="js/jquery.cookie.js"></script>
     <script type="application/javascript" src="js/main/menu.js"></script>
+    <script type="application/javascript" src="js/main/idioma.js"></script>
 </head>
 
 <body>
@@ -51,37 +52,10 @@
                                         <th style="border:solid 1px black;" class="text-center">Objetivo del Curso</th>
                                         <th style="border:solid 1px black;" class="text-center">Perfil de Ingreso</th>
                                         <th style="border:solid 1px black;" class="text-center">Perfil de Egreso</th>
-                                        <th style="border:solid 1px black;" class="text-center">Duracion</th>
                                         <th style="border:solid 1px black;" class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody id="listaAdmin">
-                                    <tr>
-                                        <td>CIING</td>
-                                        <td>Ingles</td>
-                                        <td>5</td>
-                                        <td>
-                                            Formar estudiante con habildad para poder desarrollarse en un ambiente donde el idioma sea el ingles. El estudiante aplicara de manera fluida cuatro habilidades habla, escribir, leer y escuchar que seran adquiridas a travez de enseñanza-aprendizaje que buscan desarrollar las competencias comunicativas de los estudiantes en el idioma inglés.
-                                        </td>
-                                        <style>
-
-                                        </style>
-                                        <td>
-                                            Profesionistas que requieran comunicarse hablando y escribiendo en inglés en diversos contextos laborales.
-                                        </td>
-                                        <td>
-                                            Ser capaz de participar en conversaciones con cierta fluidez sobre diversos temas de la actualidad. Escribir y leer textos sobre sobre temas de interes con el objetivo de obtener informacion y poder defender sus ideales.
-                                        </td>
-                                        <td>75</td>
-                                        <td class="text-center">
-                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEditar">
-                                                <span class="glyphicon glyphicon-edit"></span>
-                                            </button>
-                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEliminar">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                <tbody id="listaIdiomas">
                                 </tbody>
                             </table>
                         </div>
@@ -141,15 +115,11 @@
                                     <h4 class="modal-title" id="myModalLabel">Eliminar Idioma</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistro">
-                                        <div class="form-group">
-                                            <p>Desea eliminar este registro</p>
-                                        </div>
-                                    </form>
+                                    <p>Desea eliminar este registro</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
+                                    <button type="submit" class="btn btn-primary" id="eliminar">Aceptar</button>
                                 </div>
                             </div>
                         </div>
@@ -162,24 +132,23 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Actualizacion de Datos</h4>
                                 </div>
                                 <div class="modal-body">
                                     <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formUpdate">
                                         <div class="form-group">
                                             <label for="idioma">Idioma</label>
-                                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
+                                            <input type="text" class="form-control" id="idioma" name="Idiomas" placeholder="Idioma" required>
                                             <label for="niveles">Niveles</label>
-                                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
+                                            <input type="text" class="form-control" id="niveles" name="Niveles" placeholder="Niveles" required>
                                             <label for="objetivo">Objetivo del curso</label>
-                                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                                            <textarea name="Objetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
                                             <label for="perfil_ingreso">Perfil de Ingreso</label>
-                                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                                            <textarea name="Perfil_Ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
                                             <label for="prefil_egreso">Perfil de Egreso</label>
-                                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
-                                            <label for="duracion">Duracion</label>
-                                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
-                                            <input type="text" value=1 name="salida" style="display:none">
+                                            <textarea name="Perfil_Egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                                            <input type="text" value="" name="idIdiomas" id="idIdiomas" style="display:none">
+                                            <input type="text" value=2 name="salida" style="display:none">
                                         </div>
                                     </form>
                                 </div>
@@ -190,41 +159,7 @@
                             </div>
                         </div>
                     </div>
-
                     <!--Fin del Modal para el modificar el idioma-->
-                    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistro">
-                                        <div class="form-group">
-                                            <label for="idioma">Idioma</label>
-                                            <input type="text" class="form-control" id="idioma" name="idioma" placeholder="Idioma" required pattern="[A-Za-zñ]">
-                                            <label for="niveles">Niveles</label>
-                                            <input type="text" class="form-control" id="niveles" name="niveles" placeholder="Niveles" required>
-                                            <label for="objetivo">Objetivo del curso</label>
-                                            <textarea name="ojbetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
-                                            <label for="perfil_ingreso">Perfil de Ingreso</label>
-                                            <textarea name="perfil_ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
-                                            <label for="prefil_egreso">Perfil de Egreso</label>
-                                            <textarea name="prefil_egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
-                                            <label for="duracion">Duracion</label>
-                                            <input type="number" name="duracion" id="duracion" class="form-control" min="1" max="100" required="required" title="">
-                                            <input type="text" value=1 name="salida" style="display:none">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" form="formRegistro">Aceptar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
