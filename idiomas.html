@@ -52,6 +52,7 @@
                                         <th style="border:solid 1px black;" class="text-center">Objetivo del Curso</th>
                                         <th style="border:solid 1px black;" class="text-center">Perfil de Ingreso</th>
                                         <th style="border:solid 1px black;" class="text-center">Perfil de Egreso</th>
+                                        <th style="border:solid 1px black;" class="text-center">Imagen</th>
                                         <th style="border:solid 1px black;" class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
@@ -93,7 +94,7 @@
                                             <label for="prefil_egreso">Perfil de Egreso</label>
                                             <textarea name="Perfil_Egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
                                             <label for="prefil_egreso">Imagen</label>
-                                            <input type="file" value=1 name="Imagen">
+                                            <input type="file" name="Imagen">
                                             <input type="text" value=1 name="salida" style="display:none">
                                         </div>
                                     </form>
@@ -137,10 +138,10 @@
                                     <h4 class="modal-title" id="myModalLabel">Actualizacion de Datos</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formUpdate">
+                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formUpdate" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="idioma">Idioma</label>
-                                            <input type="text" class="form-control" id="idioma" name="Idiomas" placeholder="Idioma" required>
+                                            <input type="text" class="form-control" id="idioma" name="Idioma" placeholder="Idioma" required>
                                             <label for="niveles">Niveles</label>
                                             <input type="text" class="form-control" id="niveles" name="Niveles" placeholder="Niveles" required>
                                             <label for="objetivo">Objetivo del curso</label>
@@ -150,7 +151,7 @@
                                             <label for="prefil_egreso">Perfil de Egreso</label>
                                             <textarea name="Perfil_Egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
                                             <label for="prefil_egreso">Imagen</label>
-                                            <input type="file" value=1 name="Imagen">
+                                            <input type="file" name="Imagen">
                                             <input type="text" value="" name="idIdiomas" id="idIdiomas" style="display:none">
                                             <input type="text" value=2 name="salida" style="display:none">
                                         </div>

@@ -8,12 +8,13 @@ function agregarElementos($idiomas) {
         var elemTd4 = $("<td/>", { 'html': idioma.Objetivo});
         var elemTd5 = $("<td/>", { 'html': idioma.Perfil_Ingreso});
         var elemTd6 = $("<td/>", { 'html': idioma.Perfil_Egreso});
+        var elemTd6a = $("<td/>", { 'html': idioma.Imagen});
         var elemTd7 = $("<td/>");
         var elemSpan = $('<span/>', { 'class': 'glyphicon glyphicon-edit' });
         var elemSpan2 = $('<span/>', { 'class': 'glyphicon glyphicon-remove' });
         var elemButton = $('<button/>', {
             'class': 'btn btn-default eliminar',
-            'val': idioma.idIdiomas,
+            'val': idioma.idIdiomas+' '+idioma.Imagen,
             'type': 'button',
             'data-toggle': 'modal',
             'data-target': '#modalEliminar'
@@ -35,6 +36,7 @@ function agregarElementos($idiomas) {
         elemTr.append(elemTd4);
         elemTr.append(elemTd5);
         elemTr.append(elemTd6);
+        elemTr.append(elemTd6a);
         elemTr.append(elemTd7);
         $('#listaIdiomas').append(elemTr);
     });
