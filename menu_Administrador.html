@@ -19,48 +19,122 @@
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <script type="application/javascript" src="js/jquery.cookie.js"></script>
     <script type="application/javascript" src="js/main/menu.js"></script>
+    <script type="application/javascript" src="js/main/publicaciones.js"></script>
 </head>
 
 <body>
-    <!--Inicio del nav-->
     <div class="wrapper">
         <div id="wrapper">
+            <!-- Inicio del menu -->
             <nav ng-include src="'menu.html'">
             </nav>
+            <!-- Fin del menu-->
             <div id="page-wrapper">
-
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
                     <div class="row">
                         <div class="col-lg-12">
+                            <!-- Inicio del Titulo de la pagina-->
                             <h1 class="page-header">
                                 Publicaciones
                             </h1>
-                            <form action="" method="POST" role="form">
-                                <legend>Agregar una Publicacion</legend>
+                            <!-- Fin del Titulo de la pagina-->
+                            <!-- Inicio del Formulacion para las publicaciones-->
+                            <form action="http://localhost/Backend/webServicesPublicaciones.php" method="POST" role="form" enctype="multipart/form-data">
+                                <legend>Agregar una Publicación</legend>
                                 <div class="form-group">
                                     <label for="">Titulo</label>
-                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                    <input type="text" class="form-control" name="Titulo" placeholder="Titulo">
                                     <label for="">Contenido</label>
-                                    <textarea name="" id="input" class="form-control" rows="3" required="required"></textarea>
+                                    <textarea name="Contenido" class="form-control" rows="3" required="required" placeholder="Contenido"></textarea>
                                     <label for="">Imagen</label>
-                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                    <input type="file" class="form-control" name="Imagen" placeholder="Input field">
+                                    <input type="text" name="opcion" value="1" style="display:none">
+                                    <input type="text" name="Administradores_idAdministrador" id="id" style="display:none">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
                             </form>
+                            <!-- Fin del Formulacion para las publicaciones-->
                         </div>
+                    </div>
+                    <div class="row">
+                        <!--inicio Seccion de la tabla de idiomas-->
+                        <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
+                            <div class="table-responsive" style="margin-left:10px">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="text-center" style="background:#008055; color:white;">
+                                            <th style="border:solid 1px black;" class="text-center">Id_Publicacion</th>
+                                            <th style="border:solid 1px black;" class="text-center">Titulo</th>
+                                            <th style="border:solid 1px black;" class="text-center">Contenido</th>
+                                            <th style="border:solid 1px black;" class="text-center">URL de la Imagen</th>
+                                            <th style="border:solid 1px black;" class="text-center">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="listaPublicaciones">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </seccion>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Eliminar Publicacion</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Desea eliminar este registro</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="eliminar">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin del Modal para el eliminar idioma-->
+
+    <!--Inicio del Modal para el modificar el idioma-->
+    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Actualizacion de Datos</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost/Backend/webServicesPublicaciones.php" method="POST" role="form" id="formUpdate" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="">Titulo</label>
+                            <input type="text" class="form-control" name="Titulo" id="Titulo" placeholder="Titulo">
+                            <label for="">Contenido</label>
+                            <textarea name="Contenido" class="form-control" rows="3" required="required" placeholder="Contenido" id="Contenido"></textarea>
+                            <label for="">Imagen</label>
+                            <input type="file" class="form-control" name="Imagen" placeholder="Input field">
+                            <input type="text" value="" name="idPublicaciones" id="idPublicaciones" style="display:none">
+                            <input type="text" value=4 name="opcion" style="display:none">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formUpdate">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin del Modal para el modificar el idioma-->
+
+    <!-- Inicio del Footer-->
     <footer class="text-center container-fluid">
         Tecnologico Nacional de Mexico Instituto Tecnologioco de Veracruz
     </footer>
-    <!--inicio Seccion de la tabla de idiomas-->
-
-
+    <!-- Fin del Footer-->
     <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
     <script>
         var miAPlicacion = angular.module('include', []);

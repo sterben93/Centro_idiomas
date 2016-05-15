@@ -80,10 +80,10 @@
                                 </div>
                                 <div class="modal-body">
                                     <!--Inicio del formulario para registrar idiomas-->
-                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistroIdioma">
+                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistroIdioma" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="idioma">Idioma</label>
-                                            <input type="text" class="form-control" id="idioma" name="Idiomas" placeholder="Idioma" required>
+                                            <input type="text" class="form-control" id="idioma" name="Idioma" placeholder="Idioma" required>
                                             <label for="niveles">Niveles</label>
                                             <input type="text" class="form-control" id="niveles" name="Niveles" placeholder="Niveles" required>
                                             <label for="objetivo">Objetivo del curso</label>
@@ -92,6 +92,8 @@
                                             <textarea name="Perfil_Ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
                                             <label for="prefil_egreso">Perfil de Egreso</label>
                                             <textarea name="Perfil_Egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="prefil_egreso">Imagen</label>
+                                            <input type="file" value=1 name="Imagen">
                                             <input type="text" value=1 name="salida" style="display:none">
                                         </div>
                                     </form>
@@ -147,6 +149,8 @@
                                             <textarea name="Perfil_Ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
                                             <label for="prefil_egreso">Perfil de Egreso</label>
                                             <textarea name="Perfil_Egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="prefil_egreso">Imagen</label>
+                                            <input type="file" value=1 name="Imagen">
                                             <input type="text" value="" name="idIdiomas" id="idIdiomas" style="display:none">
                                             <input type="text" value=2 name="salida" style="display:none">
                                         </div>

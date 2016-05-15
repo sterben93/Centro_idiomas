@@ -1,15 +1,20 @@
+var errores = {
+    'registro': 'Usuario registrado, espera que un administrador te de de alta en la aplicacion.'
+    , 'errorRegistro': 'Error de conexion'
+    , 'email': 'Su contraseña a sido enviado a tu correo'
+    , 'errorEmail': 'error de conexion'
+    , 'erroLogin' : 'Contraseña o Usuario son incorrectos'
+
+};
+
 $(document).ready(function () {
     var formulario = "#formLogin";
     mensajeAyuda(formulario);
-    var urlActual = window.location.toString().split("=");
-    if (urlActual[1] == 0) {
-        $("#mensaje").html("Usuario o Contraseña Incorrecta");
-    } else {
-        $("#mensaje").html("");
-    }
-
-    if (urlActual[1] == 'ok') {
-        alert("Tu registro se llevo a cabo. Su usuario sera enviado a su correo cuando un administrador acepte tu solicitud");
+    var urlActual = window.location.toString();
+    alert(urlActual.search("#"));
+    if (urlActual.search('#') > 0) {
+        urlActual = urlActual.split('#');
+        alert(errores[urlActual[1]]);
     }
 
     $('input').change(function () {
@@ -20,7 +25,6 @@ $(document).ready(function () {
                 $("#mensaje").html("");
             }
         }
-
     });
 
     $('#bt_Inicio').click(function () {
@@ -35,4 +39,3 @@ $(document).ready(function () {
         });
     });
 });
-
