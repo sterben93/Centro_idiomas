@@ -66,11 +66,6 @@ $(document).ready(function ($) {
                 window.location.reload;
             });
         });
-        $('.eliminar').click(function () {
-            $cookie('id', this.value);
-        });
-        $('.aceptar').click(function () {
-            $cookie('id', this.value);
-        });
+
     });
 });

@@ -69,8 +69,96 @@
             </div>
         </div>
     </div>
+    <!--Inicio del Modal para el registro de idiomas-->
+    <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Registrar Docente</h4>
+                </div>
+                <div class="modal-body">
+                    <!--Inicio del formulario para registrar idiomas-->
+                    <form action="http://localhost/Backend/webServicesDocentes.php" method="POST" role="form" id="formRegistroIdioma">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                            <label for="Apellido_Paterno">Apellidos Paterno</label>
+                            <input type="text" class="form-control" id="Apellido_Paterno" name="Apellido_Paterno" required>
+                            <label for="Apellido_Materno">Apellido Materno</label>
+                            <input name="Apellido_Materno" id="Apellido_Materno" class="form-control" type="text" required="required">
+                            <label for="Correo">Correo</label>
+                            <input type="email" name="Correo" id="Correo" class="form-control" required="required" placeholder="docente@itver.com">
+                            <label for="Telefono">Telefono</label>
+                            <input type="tel" class="form-control" id="Telefono" name="Telefono" placeholder="2299119982" required>
+                            <input type="text" value="1" name="salida" style="display:none">
+                        </div>
+                    </form>
+                    <!--Fin del formulario para registrar idiomas-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formRegistroIdioma">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin del Modal para el registro de idiomas-->
 
-  `
+    <!--Inicio del Modal para el eliminacion de idioma-->
+    <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Eliminar Docente</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Desea eliminar este registro</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="eliminar">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin del Modal para el eliminar idioma-->
+
+    <!--Inicio del Modal para el modificar el idioma-->
+    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"> Actualizacion de Datos</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost/Backend/webServicesDocentes.php" method="POST" role="form" id="formRegistroIdioma">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                            <label for="Apellido_Paterno">Apellidos Paterno</label>
+                            <input type="text" class="form-control" id="Apellido_Paterno" name="Apellido_Paterno" required>
+                            <label for="Apellido_Materno">Apellido Materno</label>
+                            <input name="Apellido_Materno" id="Apellido_Materno" class="form-control" type="text" required="required">
+                            <label for="Correo">Correo</label>
+                            <input type="email" name="Correo" id="Correo" class="form-control" required="required" placeholder="docente@itver.com">
+                            <label for="Telefono">Telefono</label>
+                            <input type="tel" class="form-control" id="Telefono" name="Telefono" placeholder="2299119982" required>
+                            <input type="text" value="3" name="salida" style="display:none">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formUpdate">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin del Modal para el modificar el idioma-->
+    `
     <!--inicio Seccion de la tabla de idiomas-->
 
 

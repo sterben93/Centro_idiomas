@@ -58,7 +58,6 @@ CREATE TABLE IF NOT EXISTS `Centro_Idiomas`.`Docentes` (
   `Apellido_Materno` VARCHAR(45) NOT NULL,
   `Correo` VARCHAR(45) NOT NULL,
   `Telefono` VARCHAR(45) NOT NULL,
-  `Foto` MEDIUMBLOB NULL,
   PRIMARY KEY (`idDocente`))
 ENGINE = InnoDB;
 
