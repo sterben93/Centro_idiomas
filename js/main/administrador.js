@@ -18,13 +18,19 @@ $(document).ready(function ($) {
             var elemButton = $('<button/>', {
                 class: 'btn btn-default aceptar'
                 , val: administrador.idAdministrador
+                , 'type': 'button'
+                , 'data-toggle': 'modal'
+                , 'data-target': '#modalAceptar'
             });
             var elemSpan = $('<span/>', {
                 class: 'glyphicon glyphicon-ok'
             });
             var elemButton2 = $('<button/>', {
-                class: 'btn btn-default eliminar'
+                class: 'btn btn-default'
                 , val: administrador.idAdministrador
+                , 'type': 'button'
+                , 'data-toggle': 'modal'
+                , 'data-target': '#modalEliminar'
             });
             var elemSpan2 = $('<span/>', {
                 class: 'glyphicon glyphicon-remove'
@@ -40,24 +46,31 @@ $(document).ready(function ($) {
             elemTr.append(elemTD4);
             $('#listaAdmin').append(elemTr);
         });
-        $('.aceptar').click(function () {
+        $('#aceptar').click(function () {
             $.post("http://localhost/Backend/webServicesAdministrador.php", {
                 salida: 4
-                , idAdmin: this.value
+                , idAdmin: $cookie('id')
             }, function (resp) {
                 window.location.href = 'http://localhost/Centro_Idiomas/administrador.html';
                 window.location.reload;
             });
 
         });
-        $('.eliminar').click(function () {
+        $('#eliminar').click(function () {
             $.post("http://localhost/Backend/webServicesAdministrador.php", {
                 salida: 7
-                , idAdmin: this.value
+                , idAdmin: $cookie('id')
             }, function (resp) {
+                alert(resp)
                 window.location.href = 'http://localhost/Centro_Idiomas/administrador.html';
                 window.location.reload;
-            })
+            });
+        });
+        $('.eliminar').click(function () {
+            $cookie('id', this.value);
+        });
+        $('.aceptar').click(function () {
+            $cookie('id', this.value);
         });
     });
 });

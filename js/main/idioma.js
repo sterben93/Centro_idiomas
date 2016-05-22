@@ -2,19 +2,19 @@
 function agregarElementos($idiomas) {
     $.each($idiomas, function (index, idioma) {
         var elemTr = $("<tr/>", { 'id': index });
-        var elemTd = $("<td/>", { 'html': idioma.idIdiomas});
-        var elemTd2 = $("<td/>", { 'html': idioma.Idioma});
-        var elemTd3 = $("<td/>", { 'html': idioma.Niveles});
-        var elemTd4 = $("<td/>", { 'html': idioma.Objetivo});
-        var elemTd5 = $("<td/>", { 'html': idioma.Perfil_Ingreso});
-        var elemTd6 = $("<td/>", { 'html': idioma.Perfil_Egreso});
-        var elemTd6a = $("<td/>", { 'html': idioma.Imagen});
+        var elemTd = $("<td/>", { 'html': idioma.idIdiomas });
+        var elemTd2 = $("<td/>", { 'html': idioma.Idioma });
+        var elemTd3 = $("<td/>", { 'html': idioma.Niveles });
+        var elemTd4 = $("<td/>", { 'html': idioma.Objetivo });
+        var elemTd5 = $("<td/>", { 'html': idioma.Perfil_Ingreso });
+        var elemTd6 = $("<td/>", { 'html': idioma.Perfil_Egreso });
+        var elemTd6a = $("<td/>", { 'html': idioma.Imagen });
         var elemTd7 = $("<td/>");
         var elemSpan = $('<span/>', { 'class': 'glyphicon glyphicon-edit' });
         var elemSpan2 = $('<span/>', { 'class': 'glyphicon glyphicon-remove' });
         var elemButton = $('<button/>', {
             'class': 'btn btn-default eliminar',
-            'val': idioma.idIdiomas+' '+idioma.Imagen,
+            'val': idioma.idIdiomas + ' ' + idioma.Imagen,
             'type': 'button',
             'data-toggle': 'modal',
             'data-target': '#modalEliminar'
@@ -70,7 +70,7 @@ function cargarComportamientos() {
     });
 }
 
-function agregarContenido(){
+function agregarContenido() {
     $.post("http://localhost/Backend/webServicesIdiomas.php", { salida: 4 },
         function (resultado) {
             var $idiomas = JSON.parse(resultado);

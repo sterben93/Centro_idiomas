@@ -1,5 +1,5 @@
 function agregarPublicaciones() {
-    $.post("http://localhost/Backend/webServicesPublicaciones.php", {opcion: 2},
+    $.post("http://localhost/Backend/webServicesPublicaciones.php", { opcion: 2 },
         function (resultado) {
             var $publicaciones = JSON.parse(resultado);
             agregarContenido($publicaciones);
@@ -12,16 +12,16 @@ function agregarContenido($publicaciones) {
     alert('hola')
     $.each($publicaciones, function (index, publicacion) {
         var elemTr = $("<tr/>", { 'id': index });
-        var elemTd = $("<td/>", { 'html': publicacion.idPublicaciones});
-        var elemTd2 = $("<td/>", { 'html': publicacion.Titulo});
-        var elemTd3 = $("<td/>", { 'html': publicacion.Contenido});
-        var elemTd4 = $("<td/>", { 'html': publicacion.Imagen});
+        var elemTd = $("<td/>", { 'html': publicacion.idPublicaciones });
+        var elemTd2 = $("<td/>", { 'html': publicacion.Titulo });
+        var elemTd3 = $("<td/>", { 'html': publicacion.Contenido });
+        var elemTd4 = $("<td/>", { 'html': publicacion.Imagen });
         var elemTd7 = $("<td/>");
         var elemSpan = $('<span/>', { 'class': 'glyphicon glyphicon-edit' });
         var elemSpan2 = $('<span/>', { 'class': 'glyphicon glyphicon-remove' });
         var elemButton = $('<button/>', {
             'class': 'btn btn-default eliminar',
-            'val': publicacion.idPublicaciones+' '+publicacion.Imagen,
+            'val': publicacion.idPublicaciones + ' ' + publicacion.Imagen,
             'type': 'button',
             'data-toggle': 'modal',
             'data-target': '#modalEliminar'
@@ -64,9 +64,9 @@ function cargarComportamientos() {
     $('.editar').click(function () {
         var elemento = 'tr#' + this.value + ' > td';
         var inputEdit = ["form#formUpdate > div > #idPublicaciones",
-                         "form#formUpdate > div > input#Titulo",
-                        "form#formUpdate > div > textarea#Contenido",
-                    ];
+            "form#formUpdate > div > input#Titulo",
+            "form#formUpdate > div > textarea#Contenido",
+        ];
         $(elemento).each(function (number, td) {
             if (number < 4) {
                 alert(td.innerHTML);

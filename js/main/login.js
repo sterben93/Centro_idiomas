@@ -3,7 +3,7 @@ var errores = {
     , 'errorRegistro': 'Error de conexion'
     , 'email': 'Su contraseña a sido enviado a tu correo'
     , 'errorEmail': 'error de conexion'
-    , 'erroLogin' : 'Contraseña o Usuario son incorrectos'
+    , 'erroLogin': 'Contraseña o Usuario son incorrectos'
 
 };
 

@@ -1,5 +1,6 @@
-$(document).ready(function () {
-    if ($cookie("nombre") == undefined) {
+$(document).ready(function ($) {
+    'use strict';
+    if ($cookie("nombre") === undefined) {
         var urlActual = window.location.toString().split("#/");
         var nombre_Usurio = urlActual[1];
         $cookie("nombre", urlActual[1]);
@@ -13,8 +14,5 @@ $(document).ready(function () {
     }
     $("#cerrar").click(function () {
         $removeCookie("nombre");
-        alert($cookie("nombre"))
     });
-    alert($cookie('nombre'));
-    $('#id').val($cookie('nombre'));
 });
