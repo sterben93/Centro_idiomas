@@ -73,6 +73,19 @@ function cargarComportamientos() {
             }
         });
     });
+    $("#ocultar").click(function(){
+        if(this.value==="1"){
+            $("#lista").hide();
+        this.innerHTML='Ver Lista <span class="glyphicon glyphicon-eye-open"></span>';
+            this.value="2";
+        }else{
+            $("#lista").show();
+            this.innerHTML='Ocultar Lista <span class="glyphicon glyphicon-eye-close"></span>';
+            this.value="1";
+        }
+
+
+    });
     $("#id").val($cookie("nombre"))
 }
 $(document).ready(function ($) {
