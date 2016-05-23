@@ -9,7 +9,6 @@ function agregarPublicaciones() {
 }
 
 function agregarContenido($publicaciones) {
-    alert('hola')
     $.each($publicaciones, function (index, publicacion) {
         var elemTr = $("<tr/>", { 'id': index });
         var elemTd = $("<td/>", { 'html': publicacion.idPublicaciones });
@@ -74,6 +73,7 @@ function cargarComportamientos() {
             }
         });
     });
+    $("#id").val($cookie("nombre"))
 }
 $(document).ready(function ($) {
     'use strict';

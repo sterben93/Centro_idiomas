@@ -13,7 +13,7 @@ function agregarContenido($publicaciones) {
         var elemDiv2 = $('<div/>', { 'class': 'thumbnail' });
         var elemIMg = $('<img/>', { 'src': publicacion.Imagen, 'alt': 'noticia ' + index, 'class': 'imagen' });
         var elemDiv3 = $('<div/>', { 'class': 'caption' });
-        var elemH3 = $('<h3/>', { 'html': publicacion.Titulo, class: 'container' });
+        var elemH3 = $('<h3/>', { 'html': publicacion.Titulo, class: 'container-fluid' });
         var elemP = $('<p/>', { 'html': publicacion.Contenido });
         var elemP2 = $('<p/>');
         alert(publicacion.Imagen);
