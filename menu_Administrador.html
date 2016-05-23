@@ -42,16 +42,16 @@
                             <form action="http://localhost/Backend/webServicesPublicaciones.php" method="POST" role="form" enctype="multipart/form-data">
                                 <legend>Agregar una Publicación</legend>
                                 <div class="form-group">
-                                    <label for="">Titulo</label>
-                                    <input type="text" class="form-control" name="Titulo" placeholder="Titulo">
-                                    <label for="">Contenido</label>
-                                    <textarea name="Contenido" class="form-control" rows="3" required="required" placeholder="Contenido"></textarea>
+                                    <label for="">Titulo (150 caracteres por titulo).</label>
+                                    <input type="text" class="form-control" name="Titulo" maxlength="150" required>
+                                    <label for="">Contenido (3000 caracteres por contenido).</label>
+                                    <textarea name="Contenido" class="form-control" rows="10" required="required" maxlength="3000"></textarea>
                                     <label for="">Imagen</label>
-                                    <input type="file" class="form-control" name="Imagen" placeholder="Input field">
+                                    <input type="file" class="form-control" name="Imagen" required id="imagen">
                                     <input type="text" name="opcion" value="1" style="display:none">
                                     <input type="text" name="Administradores_idAdministrador" id="id" style="display:none">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <button type="submit" class="btn btn-primary" value='submit request'>Enviar</button>
                             </form>
                             <!-- Fin del Formulacion para las publicaciones-->
                         </div>
@@ -59,7 +59,7 @@
                     <br/>
                     <div class="row">
                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                            <button type="button" class="btn btn-default" id="ocultar" value="1">Ver lista <span class="glyphicon glyphicon-eye-open"></span></button>
+                            <button type="button" class="btn btn-default" id="ocultar" value="2">Ver lista <span class="glyphicon glyphicon-eye-open"></span></button>
                         </div>
 
                         <!--inicio Seccion de la tabla de idiomas-->
@@ -92,7 +92,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Eliminar Publicacion</h4>
+                    <h4 class="modal-title" id="myModalLabel">Eliminar Publicación </h4>
                 </div>
                 <div class="modal-body">
                     <p>Desea eliminar este registro</p>
@@ -112,7 +112,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Actualizacion de Datos</h4>
+                    <h4 class="modal-title">Actualización de Datos</h4>
                 </div>
                 <div class="modal-body">
                     <form action="http://localhost/Backend/webServicesPublicaciones.php" method="POST" role="form" id="formUpdate" enctype="multipart/form-data">
@@ -138,9 +138,6 @@
     <!--Fin del Modal para el modificar el idioma-->
 
     <!-- Inicio del Footer-->
-    <footer class="text-center container-fluid">
-        Tecnologico Nacional de Mexico Instituto Tecnologioco de Veracruz
-    </footer>
     <!-- Fin del Footer-->
     <!--Con este script me permite integrar plantillas a mi paguina html con angularjs-->
     <script>

@@ -1,19 +1,27 @@
+
+
+
+
+
+
+
+
 /* global $ */
 var mensajes = {
-    user: "Su usuario esta escrito incorrectamente por favor verificarlo"
-    , password: "Su contraseña esta escrito incorrectamente"
-    , nombre: "Tu nombre no esta bien escrito"
+    user: "Su usuario esta escrito incorrectamente por favor verificarlo."
+    , password: "Su contraseña esta escrito incorrectamente."
+    , nombre: "Tu nombre no esta bien escrito."
     , apellido: "Tu apellido no esta bien escrito"
-    , correo: "Verifique que su correo este bien escrito"
-    , contraseña: "Su contraseña debe de iniciar con mayuscula y tines un rango de 8 a 16 caracteres"
+    , correo: "Verifique que su correo este bien escrito."
+    , contraseña: "Su contraseña debe de iniciar con mayúscula y de una longitud de 8 a 16 caracteres."
 };
 
 var errores = {
-    'registro': 'Usuario registrado, espera que un administrador te de de alta en la aplicacion.'
-    , 'errorRegistro': 'Error de conexion'
-    , 'email': 'Su contraseña a sido enviado a tu correo'
-    , 'errorEmail': 'error de conexion'
-    , 'erroLogin': 'Contraseña o Usuario son incorrectos'
+    'registro': 'Usuario registrado, espera que un administrador te de alta en la aplicación.'
+    , 'errorRegistro': 'Error de conexión.'
+    , 'email': 'Su contraseña a sido enviado a tu correo.'
+    , 'errorEmail': 'Error de conexión.'
+    , 'erroLogin': 'Contraseña o Usuario son incorrectos.'
 };
 
 var patron = {
