@@ -26,7 +26,7 @@ $(document).ready(function ($) {
                 class: 'glyphicon glyphicon-ok'
             });
             var elemButton2 = $('<button/>', {
-                class: 'btn btn-default'
+                class: 'btn btn-default eliminar'
                 , val: administrador.idAdministrador
                 , 'type': 'button'
                 , 'data-toggle': 'modal'
@@ -49,7 +49,7 @@ $(document).ready(function ($) {
         $('#aceptar').click(function () {
             $.post("http://localhost/Backend/webServicesAdministrador.php", {
                 salida: 4
-                , idAdmin: $cookie('id')
+                , idAdmin: $cookie('idAdmin')
             }, function (resp) {
                 window.location.href = 'http://localhost/Centro_Idiomas/administrador.html';
                 window.location.reload;
@@ -59,13 +59,17 @@ $(document).ready(function ($) {
         $('#eliminar').click(function () {
             $.post("http://localhost/Backend/webServicesAdministrador.php", {
                 salida: 7
-                , idAdmin: $cookie('id')
+                , idAdmin: $cookie('idAdmin')
             }, function (resp) {
-                alert(resp)
                 window.location.href = 'http://localhost/Centro_Idiomas/administrador.html';
                 window.location.reload;
             });
         });
-
+        $(".aceptar").click(function (){
+            $cookie('idAdmin', this.value);
+        });
+        $(".eliminar").click(function (){
+            $cookie('idAdmin', this.value);
+        });
     });
 });
