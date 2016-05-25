@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Pagina web para dar a conocer la información relacionada con los idiomas que Ofrece la Institución Tecnológico de Veracruz">
+    <meta name="keywords" content="idiomas, inglés, francés, alemán, chino">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centro Idiomas</title>
+    <link rel="icon" href="image/icono.ico">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main/general.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="application/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="application/javascript" src="js/angular.min.js"></script>
+    <script type="application/javascript" src="js/angular.min.js"></script>
+    <script type="application/javascript" src="js/bootstrap.js"></script>
+    <script type="application/javascript" src="js/jquery.cookie.js"></script>
+    <script type="application/javascript" src="js/main/menu.js"></script>
+    <script type="application/javascript" src="js/main/cursos.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="wrapper">
+            <nav ng-include src="'menu.html'">
+
+            </nav>
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                    Cursos
+                                </h1>
+                            <form action="http://localhost/Backend/webServicesCursos.php" method="POST" role="form">
+                                <legend>Agregar un Curso</legend>
+                                <div class="form-group">
+                                    <label for="">Seleccionar Idioma</label>
+                                    <select name="Idiomas_idIdiomas" id="select_Idiomas" class="form-control" required="required">
+
+                                    </select>
+                                    <label for="">Seleccione un maestro</label>
+                                    <select name="Maestros_idMaestros" id="select_Docentes" class="form-control" required="required">
+
+                                    </select>
+                                    <label for="">Seleccione un nivel</label>
+                                    <select name="" id="select_Niveles" class="form-control" required="required">
+
+                                    </select>
+                                    <label for="">Nombre del Curso</label>
+                                    <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+                                    <label for="">Horario</label>
+                                    <div class="form-group form-inline">
+                                        <input type="time" class="form-control" id="">
+                                        <input type="time" class="form-control" id="">
+                                    </div>
+                                    <label for="">Fechas de Inscripcion</label>
+                                    <div class="form-group form-inline">
+                                        <input type="date" class="form-control" id="">
+                                        <input type="date" class="form-control" id="">
+                                    </div>
+                                    <label for="">Fechas del Curso</label>
+                                    <div class="form-group form-inline">
+                                        <input type="date" class="form-control" id="">
+                                        <input type="date" class="form-control" id="">
+                                    </div>
+                                    <label for="">Capacidad del Curso</label>
+                                    <input type="number" name="" id="input" class="form-control" value="" min="[MIN]" max="[MAX]" step="" required="required" title="">
+                                </div>
+                                <button type="submit" class="btn btn-primary" value='submit request'>Enviar</button>
+                            </form>
+                            <!-- Fin del Formulacion para las publicaciones-->
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <button type="button" class="btn btn-default" id="ocultar" value="2">Ver lista <span class="glyphicon glyphicon-eye-open"></span></button>
+                        </div>
+
+                        <!--inicio Seccion de la tabla de idiomas-->
+
+                        <br/>
+                        <seccion id="lista" class="row" style="width:100%; padding-right: 100px;  display:none;">
+                            <div class="table-responsive" style="margin-left:10px">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="text-center" style="background:#008055; color:white;">
+                                            <th style="border:solid 1px black;" class="text-center">Id_Publicacion</th>
+                                            <th style="border:solid 1px black;" class="text-center">Titulo</th>
+                                            <th style="border:solid 1px black;" class="text-center">Contenido</th>
+                                            <th style="border:solid 1px black;" class="text-center">URL de la Imagen</th>
+                                            <th style="border:solid 1px black;" class="text-center">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="listaPublicaciones">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </seccion>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Eliminar Publicación </h4>
+                </div>
+                <div class="modal-body">
+                    <p>Desea eliminar este registro</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="eliminar">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin del Modal para el eliminar idioma-->
+
+    <!--Inicio del Modal para el modificar el idioma-->
+    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Actualización de Datos</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="http://localhost/Backend/webServicesPublicaciones.php" method="POST" role="form" id="formUpdate" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="">Titulo</label>
+                            <input type="text" class="form-control" name="Titulo" id="Titulo" placeholder="Titulo">
+                            <label for="">Contenido</label>
+                            <textarea name="Contenido" class="form-control" rows="3" required="required" placeholder="Contenido" id="Contenido"></textarea>
+                            <label for="">Imagen</label>
+                            <input type="file" class="form-control" name="Imagen" placeholder="Input field">
+                            <input type="text" value="" name="idPublicaciones" id="idPublicaciones" style="display:none">
+                            <input type="text" value="4" name="opcion" style="display:none">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formUpdate">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var miAPlicacion = angular.module('include', []);
+    </script>
+
+</body>
+
+</html>
