@@ -19,6 +19,8 @@
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <script type="application/javascript" src="js/jquery.cookie.js"></script>
     <script type="application/javascript" src="js/main/menu.js"></script>
+    <script type="application/javascript" src="js/main/recursos.js"></script>
+    <script type="application/javascript" src="js/main/docente.js"></script>
 </head>
 
 <body>
@@ -46,12 +48,13 @@
                                     <tr class="text-center" style="background:#008055; color:white;">
                                         <th style="border:solid 1px black;" class="text-center">Id_Docente</th>
                                         <th style="border:solid 1px black;" class="text-center">Nombre</th>
+                                        <th style="border:solid 1px black;" class="text-center">Apellidos</th>
                                         <th style="border:solid 1px black;" class="text-center">Correo</th>
                                         <th style="border:solid 1px black;" class="text-center">Telefono</th>
                                         <th style="border:solid 1px black;" class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody id="listaMaestros">
+                                <tbody id="listaDocentes">
                                 </tbody>
                             </table>
                         </div>
@@ -79,14 +82,12 @@
                 </div>
                 <div class="modal-body">
                     <!--Inicio del formulario para registrar idiomas-->
-                    <form action="http://localhost/Backend/webServicesDocentes.php" method="POST" role="form" id="formRegistroIdioma">
+                    <form action="http://localhost/Backend/webServicesDocentes.php" method="POST" role="form" id="formRegistroDocente">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
-                            <label for="Apellido_Paterno">Apellidos Paterno</label>
-                            <input type="text" class="form-control" id="Apellido_Paterno" name="Apellido_Paterno" required>
-                            <label for="Apellido_Materno">Apellido Materno</label>
-                            <input name="Apellido_Materno" id="Apellido_Materno" class="form-control" type="text" required="required">
+                            <input type="text" class="form-control" id="nombre" name="Nombre" required>
+                            <label for="Apellidos">Apellidos</label>
+                            <input type="text" class="form-control" id="Apellidos" name="Apellidos" required>
                             <label for="Correo">Correo</label>
                             <input type="email" name="Correo" id="Correo" class="form-control" required="required" placeholder="docente@itver.com">
                             <label for="Telefono">Telefono</label>
@@ -98,7 +99,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" form="formRegistroIdioma">Aceptar</button>
+                    <button type="submit" class="btn btn-primary" form="formRegistroDocente">Aceptar</button>
                 </div>
             </div>
         </div>
@@ -134,19 +135,18 @@
                     <h4 class="modal-title"> Actualizacion de Datos</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="http://localhost/Backend/webServicesDocentes.php" method="POST" role="form" id="formRegistroIdioma">
+                    <form action="http://localhost/Backend/webServicesDocentes.php" method="POST" role="form" id="formUpdate">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
-                            <label for="Apellido_Paterno">Apellidos Paterno</label>
-                            <input type="text" class="form-control" id="Apellido_Paterno" name="Apellido_Paterno" required>
-                            <label for="Apellido_Materno">Apellido Materno</label>
-                            <input name="Apellido_Materno" id="Apellido_Materno" class="form-control" type="text" required="required">
+                            <input type="text" class="form-control" id="idDocente" name="idDocente" required style="display:none">
+                            <input type="text" class="form-control" id="nombre" name="Nombre" required>
+                            <label for="Apellidos">Apellidos</label>
+                            <input type="text" class="form-control" id="Apellidos" name="Apellidos" required>
                             <label for="Correo">Correo</label>
                             <input type="email" name="Correo" id="Correo" class="form-control" required="required" placeholder="docente@itver.com">
                             <label for="Telefono">Telefono</label>
                             <input type="tel" class="form-control" id="Telefono" name="Telefono" placeholder="2299119982" required>
-                            <input type="text" value="3" name="salida" style="display:none">
+                            <input type="text" value="2" name="salida" style="display:none">
                         </div>
                     </form>
                 </div>

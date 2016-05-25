@@ -1,14 +1,14 @@
 #titulo {
-	color: red;
+    color: red;
     font-size: 30px;
 }
 #login {
-   background-image: url(../../image/idiomas.jpg);
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   min-height: 100vh;
-   font-family: 'Roboto', sans-serif;
+    background-image: url(../../image/idiomas.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 #formLogin {
@@ -22,5 +22,5 @@
 
 body,
 html {
-   overflow: hidden;
+    overflow: hidden;
 }

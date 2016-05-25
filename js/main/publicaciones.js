@@ -1,12 +1,12 @@
 function agregarPublicaciones() {
     $.post("http://localhost/Backend/webServicesPublicaciones.php", {
-            opcion: 2
-        }
-        , function (resultado) {
-            var $publicaciones = JSON.parse(resultado);
-            agregarContenido($publicaciones);
-            cargarComportamientos();
-        }
+        opcion: 2
+    }
+    , function (resultado) {
+        var $publicaciones = JSON.parse(resultado);
+        agregarContenido($publicaciones);
+        cargarComportamientos();
+    }
     );
 }
 
@@ -82,15 +82,15 @@ function cargarComportamientos() {
 
 
 
-            , "form#formUpdate > div > input#Titulo"
+                    , "form#formUpdate > div > input#Titulo"
 
 
 
-            , "form#formUpdate > div > textarea#Contenido"
+                    , "form#formUpdate > div > textarea#Contenido"
 
 
 
-            , ];
+                    , ];
         $(elemento).each(function (number, td) {
             if (number < 4) {
                 alert(td.innerHTML);
@@ -119,13 +119,13 @@ $(document).ready(function ($) {
     $('input[type=file]').change(function () {
         var x = this;
 
-  if ('files' in x) {
+        if ('files' in x) {
             if (x.files.length == 0) {
                 txt = "Select one or more files.";
             } else {
                 for (var i = 0; i < x.files.length; i++) {
                     var file = x.files[i];
-                    if(200000<file.size){
+                    if (200000 < file.size) {
                         alert("Excedio tamaño del archivo el maximo es 200 kilobytes")
                     }
                     if (!(/\.(jpg|png|jpeg)$/i).test(file.name)) {

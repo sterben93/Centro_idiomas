@@ -65,10 +65,10 @@ $(document).ready(function ($) {
                 window.location.reload;
             });
         });
-        $(".aceptar").click(function (){
+        $(".aceptar").click(function () {
             $cookie('idAdmin', this.value);
         });
-        $(".eliminar").click(function (){
+        $(".eliminar").click(function () {
             $cookie('idAdmin', this.value);
         });
     });

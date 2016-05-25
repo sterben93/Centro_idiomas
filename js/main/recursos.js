@@ -1,19 +1,10 @@
-
-
-
-
-
-
-
-
 /* global $ */
 var mensajes = {
-    user: "Su usuario esta escrito incorrectamente por favor verificarlo."
-    , password: "Su contraseña esta escrito incorrectamente."
-    , nombre: "Tu nombre no esta bien escrito."
-    , apellido: "Tu apellido no esta bien escrito"
-    , correo: "Verifique que su correo este bien escrito."
-    , contraseña: "Su contraseña debe de iniciar con mayúscula y de una longitud de 8 a 16 caracteres."
+    idAdministrador: "Su usuario esta escrito incorrectamente por favor verificarlo."
+    , Nombre: "Tu nombre no esta bien escrito."
+    , Apellidos: "Tus apellidos no esta bien escrito"
+    , Correo: "Verifique que su correo este bien escrito."
+    , Contraseña: "Su contraseña debe de iniciar con mayúscula y de una longitud de 8 a 16 caracteres."
 };
 
 var errores = {
@@ -25,14 +16,15 @@ var errores = {
 };
 
 var patron = {
-    user: /CI[A-Z]{3}[A-Z|0-9]{3}/
+    idAdministrador: /CI[A-Z]{3}[A-Z|0-9]{3}/
     , password: /[A-Z][A-Z-a-z|0-9]{8,15}/
-    , nombre: /([A-Z]([a-zA-Z ñáéíóúÑ])+)([\s]|([A-Z]([a-zA-Z ñáéíóúÑ]+)))*/
-    , apellidos: /([A-Z]([a-zA-Z ñáéíóúÑ])+)([\s]|([A-Z]([a-zA-Z ñáéíóúÑ]+)))+/
-    , correo: /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/
-    , contraseña : /[A-Z][A-Z-a-z|0-9]{8,15}/
+    , Nombre: /([A-Z]([a-zA-Z ñáéíóúÑ])+)([\s]|([A-Z]([a-zA-Z ñáéíóúÑ]+)))*/
+    , Apellidos: /([A-Z]([a-zA-Z ñáéíóúÑ])+)([\s]|([A-Z]([a-zA-Z ñáéíóúÑ]+)))+/
+    , Correo: /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/
+    , Contraseña: /[A-Z][A-Z-a-z|0-9]{8,15}/
 };
 
+url_Backend="http://localhost/Backend/"
 /**
  *
  * @param {type} formulario
@@ -66,7 +58,7 @@ function validarCampo(campo, texto) {
     return validarCampo;
 }
 
-function verificaInput () {
+function verificaInput() {
     $('input').each(function (num, elem) {
         if (!validarCampo(elem.name + "", elem.value)) {
             alert(mensajes[elem.name]);
