@@ -67,6 +67,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Centro_Idiomas`.`Cursos` (
   `idCursos` VARCHAR(5) NOT NULL,
+  `Nombre` VARCHAR(100) NOT NULL,
   `Nivel` INT NOT NULL,
   `Horario` VARCHAR(45) NOT NULL,
   `salon` VARCHAR(5) NOT NULL,
