@@ -35,7 +35,6 @@
                 <div class="container">
                     <div class="carousel-content">
                         <h1> Centro de Idioma del Instituto Tecnologico de Veracruz </h1>
-                        <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas explicabo at voluptates praesentium eum, facere ullam iure, odio repudiandae autem, ut excepturi. Ea placeat, ex reiciendis est tempora sit temporibus!</p>
                     </div>
                 </div>
             </div>
@@ -43,8 +42,6 @@
                 <div class="container">
                     <div class="carousel-content">
                         <h1>Centro de Idioma del Instituto Tecnologico de Veracruz</h1>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, facere! Error, assumenda veritatis molestias, accusamus labore quis iste quisquam, velit eius dolores suscipit veniam inventore similique nihil, doloremque nam nostrum.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -135,29 +132,28 @@
             </div>
         </div>
     </section>
-    <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="modalIns" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Inscribirse a Curso</h4>
                                 </div>
                                 <div class="modal-body">
                                     <!--Inicio del formulario para registrar idiomas-->
-                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistroIdioma" enctype="multipart/form-data">
+                                    <form action="http://localhost/Backend/webServicesInscripcion.php" method="POST" role="form" id="formRegistroIdioma">
                                         <div class="form-group">
-                                            <label for="idioma">Idioma</label>
-                                            <input type="text" class="form-control" id="idioma" name="Idioma" placeholder="Idioma" required>
-                                            <label for="niveles">Niveles</label>
-                                            <input type="text" class="form-control" id="niveles" name="Niveles" placeholder="Niveles" required>
-                                            <label for="objetivo">Objetivo del curso</label>
-                                            <textarea name="Objetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
-                                            <label for="perfil_ingreso">Perfil de Ingreso</label>
-                                            <textarea name="Perfil_Ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
-                                            <label for="prefil_egreso">Perfil de Egreso</label>
-                                            <textarea name="Perfil_Egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
-                                            <label for="prefil_egreso">Imagen</label>
-                                            <input type="file" name="Imagen">
+                                            <label for="N_Control">N° Control</label>
+                                            <input type="text" class="form-control" id="N_Control" name="N_Control" placeholder="E12312311" required>
+                                            <label for="Nombre">Nombre</label>
+                                            <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" required>
+                                            <label for="Apellidos">Apellidos</label>
+                                            <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos" required>
+                                            <label for="Carrera">Carrera</label>
+                                            <input type="text" class="form-control" id="Carrera" name="Carrera" placeholder="Carrera" required>
+                                            <label for="Semestre">Semestre</label>
+                                            <input type="text" class="form-control" id="Semestre" name="Semestre" placeholder="Semestre" required>
+                                            <input type="text" id="Cursos" name="Cursos_idCursos" style="display:none">
                                             <input type="text" value=1 name="salida" style="display:none">
                                         </div>
                                     </form>

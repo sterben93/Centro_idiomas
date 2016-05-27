@@ -73,7 +73,6 @@ function cargarComportamientos() {
         });
     });
     $('.eliminar').click(function () {
-        alert(this.value);
         $cookie('id', this.value);
     });
 
@@ -85,7 +84,6 @@ function cargarComportamientos() {
                     , ];
         $(elemento).each(function (number, td) {
             if (number < 4) {
-                alert(td.innerHTML);
                 $(inputEdit[number]).val(td.innerHTML);
             }
         });

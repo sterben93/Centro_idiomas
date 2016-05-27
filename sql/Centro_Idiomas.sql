@@ -102,7 +102,7 @@ CREATE INDEX `fk_Cursos_Idiomas1_idx` ON `Centro_Idiomas`.`Cursos` (`Idiomas_idI
 -- Table `Centro_Idiomas`.`Inscripciones`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Centro_Idiomas`.`Inscripciones` (
-  `idInscripciones` INT NOT NULL,
+  `idInscripciones` INT NOT NULL AUTO_INCREMENT,
   `Fecha_Insc` DATE NULL,
   `Status` TINYINT(1) NULL,
   `N_Control` VARCHAR(45) NULL,
