@@ -67,8 +67,9 @@ function cargarComportamientos() {
             opcion: 3
             , idPublicaciones: $cookie('id')
         }, function (resp) {
-            window.location.href = 'http://localhost/Centro_Idiomas/idiomas.html';
-            window.location.reload;
+            $('#listaPublicaciones').html("");
+            $('.modal').modal('hide')
+            agregarPublicaciones();
         });
     });
     $('.eliminar').click(function () {
@@ -79,17 +80,8 @@ function cargarComportamientos() {
     $('.editar').click(function () {
         var elemento = 'tr#' + this.value + ' > td';
         var inputEdit = ["form#formUpdate > div > #idPublicaciones"
-
-
-
                     , "form#formUpdate > div > input#Titulo"
-
-
-
                     , "form#formUpdate > div > textarea#Contenido"
-
-
-
                     , ];
         $(elemento).each(function (number, td) {
             if (number < 4) {

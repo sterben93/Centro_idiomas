@@ -22,8 +22,15 @@
     <script type="application/javascript" src="js/main/cursos.js"></script>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#tabla">
+    <style>
+        body {
+            position: relative;
+        }
+    </style>
+
     <div class="wrapper">
+
         <div id="wrapper">
             <nav ng-include src="'menu.html'">
 
@@ -47,32 +54,31 @@
 
                                     </select>
                                     <label for="">Seleccione un nivel</label>
-                                    <select name="" id="select_Niveles" class="form-control" required="required">
+                                    <select name="Nivel" id="select_Niveles" class="form-control" required="required">
 
                                     </select>
                                     <label for="">Nombre del Curso</label>
-                                    <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+                                    <input type="text" name="Nombre_del_Curso" class="form-control" required="required" placeholder="Idioma Basico 1">
                                     <label for="">Horario</label>
-                                    <div class="form-group form-inline">
-                                        <input type="time" class="form-control" id="">
-                                        <input type="time" class="form-control" id="">
-                                    </div>
+                                    <input type="text" class="form-control" placeholder="9:00-10:00" name="Horario">
+                                    <label for="">Salon</label>
+                                    <input type="text" class="form-control" name="salon">
                                     <label for="">Fechas de Inscripcion</label>
                                     <div class="form-group form-inline">
-                                        <input type="date" class="form-control" id="">
-                                        <input type="date" class="form-control" id="">
+                                        <input type="date" class="form-control" name="Fec_Inicio_Insc">
+                                        <input type="date" class="form-control" name="Fec_Fin_Insc">
                                     </div>
                                     <label for="">Fechas del Curso</label>
                                     <div class="form-group form-inline">
-                                        <input type="date" class="form-control" id="">
-                                        <input type="date" class="form-control" id="">
+                                        <input type="date" class="form-control" name="Fecha_Inicio_Curso">
+                                        <input type="date" class="form-control" name="Fecha_Fin_Curso">
                                     </div>
                                     <label for="">Capacidad del Curso</label>
-                                    <input type="number" name="" id="input" class="form-control" value="" min="[MIN]" max="[MAX]" step="" required="required" title="">
+                                    <input type="number" name="Capacidad" class="form-control" required="required">
+                                    <input type="number" name="salida" class="form-control" value="1" style="display:none">
                                 </div>
                                 <button type="submit" class="btn btn-primary" value='submit request'>Enviar</button>
                             </form>
-                            <!-- Fin del Formulacion para las publicaciones-->
                         </div>
                     </div>
                     <br/>
@@ -84,19 +90,30 @@
                         <!--inicio Seccion de la tabla de idiomas-->
 
                         <br/>
-                        <seccion id="lista" class="row" style="width:100%; padding-right: 100px;  display:none;">
-                            <div class="table-responsive" style="margin-left:10px">
-                                <table class="table table-bordered">
+                        <style>
+
+                        </style>
+                        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+                        <seccion id="lista" class="row" style="width:100%; padding-right: 100px;">
+                            <div class="table-responsive" style="margin-left:10px" id="tabla">
+                                <table class="table table-striped table-bordered">
                                     <thead>
                                         <tr class="text-center" style="background:#008055; color:white;">
-                                            <th style="border:solid 1px black;" class="text-center">Id_Publicacion</th>
-                                            <th style="border:solid 1px black;" class="text-center">Titulo</th>
-                                            <th style="border:solid 1px black;" class="text-center">Contenido</th>
-                                            <th style="border:solid 1px black;" class="text-center">URL de la Imagen</th>
+                                            <th style="border:solid 1px black;" class="text-center">Id_Cursos</th>
+                                            <th style="border:solid 1px black;" class="text-center">Nombre del Curso</th>
+                                            <th style="border:solid 1px black;" class="text-center">Nivel</th>
+                                            <th style="border:solid 1px black;" class="text-center">Horario</th>
+                                            <th style="border:solid 1px black;" class="text-center">Salon</th>
+                                            <th style="border:solid 1px black;" class="text-center">Fecha de Inicio de Inscripcion</th>
+                                            <th style="border:solid 1px black;" class="text-center">Fecha de Final de Inscripcion</th>
+                                            <th style="border:solid 1px black;" class="text-center">Fecha de Inicio de Curso</th>
+                                            <th style="border:solid 1px black;" class="text-center">Fecha de Final de Curso</th>
+                                            <th style="border:solid 1px black;" class="text-center">Capacidad</th>
+                                            <th style="border:solid 1px black;" class="text-center">Inscritos</th>
                                             <th style="border:solid 1px black;" class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="listaPublicaciones">
+                                    <tbody id="listaCursos">
                                     </tbody>
                                 </table>
                             </div>
@@ -124,36 +141,6 @@
         </div>
     </div>
     <!--Fin del Modal para el eliminar idioma-->
-
-    <!--Inicio del Modal para el modificar el idioma-->
-    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Actualización de Datos</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="http://localhost/Backend/webServicesPublicaciones.php" method="POST" role="form" id="formUpdate" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="">Titulo</label>
-                            <input type="text" class="form-control" name="Titulo" id="Titulo" placeholder="Titulo">
-                            <label for="">Contenido</label>
-                            <textarea name="Contenido" class="form-control" rows="3" required="required" placeholder="Contenido" id="Contenido"></textarea>
-                            <label for="">Imagen</label>
-                            <input type="file" class="form-control" name="Imagen" placeholder="Input field">
-                            <input type="text" value="" name="idPublicaciones" id="idPublicaciones" style="display:none">
-                            <input type="text" value="4" name="opcion" style="display:none">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" form="formUpdate">Aceptar</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <script>
         var miAPlicacion = angular.module('include', []);
     </script>

@@ -228,3 +228,8 @@ footer {
     left: 0px;
     font-size: 20px;
 }
+
+#tabla {
+    overflow-y: scroll;
+    height: 400px;
+}

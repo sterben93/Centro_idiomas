@@ -8,6 +8,7 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Centro de Idiomas</title>
+    <link rel="icon" href="image/icono.ico">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main/index.css">
@@ -15,7 +16,7 @@
     <script type="application/javascript" src="js/angular.min.js"></script>
     <script type="application/javascript" src="js/angular-route.min.js"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
-    <script type="application/javascript" src="js/main/index.js"></script>
+    <script type="application/javascript" src="js/main/idioma.js"></script>
 
 </head>
 
@@ -55,15 +56,46 @@
     <section id="services">
         <div class="container">
             <div class="box first">
-                <div class="row">
+                <div class="row" id="cont_Idioma">
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 center">
-                        <img src="image/banderas/bandera%20de%20alemania.png" class="img-circle" alt="Cinque Terre" width="100">
+                        <img class="img-circle" alt="Cinque Terre" width="100"  id="imagen">
                     </div>
                     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                        <h2 id="idioma">Idioma</h2>
+                        <h2 id="idioma"></h2>
                     </div>
+                    <style>
+                        #objetivo, #Perfil_Ingreso, #Perfil_Egreso{
+                            color: black;
+                            padding: 15px;
+                            font-size: 14px;
+                        }
+                    </style>
                     <div class="row">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi accusantium, dolore aspernatur asperiores doloribus iusto hic fugiat molestiae provident culpa deleniti labore maxime commodi eveniet necessitatibus. Doloribus ratione et aspernatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi accusantium, dolore aspernatur asperiores doloribus iusto hic fugiat molestiae provident culpa deleniti labore maxime commodi eveniet necessitatibus. Doloribus ratione et aspernatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi accusantium, dolore aspernatur asperiores doloribus iusto hic fugiat molestiae provident culpa deleniti labore maxime commodi eveniet necessitatibus. Doloribus ratione et aspernatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi accusantium, dolore aspernatur asperiores doloribus iusto hic fugiat molestiae provident culpa deleniti labore maxime commodi eveniet necessitatibus. Doloribus ratione et aspernatur.</p>
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="row text-center">
+                                <h3>Objetivo</h3>
+                            </div>
+                            <div class="row text-justify">
+                                <div id="objetivo"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="row text-center">
+                                <h3>Perfil de Ingreso</h3>
+                            </div>
+                            <div class="row text-justify">
+                               <ul id="Perfil_Ingreso"></ul>
+                                <p ></p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="row text-center">
+                                <h3>Perfil de Egreso</h3>
+                            </div>
+                            <div class="row text-justify">
+                                <p id="Perfil_Egreso"></p>
+                            </div>
+                        </div>
                     </div>
                     <!--/.box-->
                 </div>
@@ -72,17 +104,15 @@
         <!--/.container-->
     </section>
     <section>
-        <div class="container" style="margin-top:10px;">
-            <div class="row container">
+        <div class="container box first" style="margin-top:10px;">
+            <div class="row container center">
                 <form action="" method="POST" class="form-inline" role="form">
                     <div class="form-group">
-                        <label for=""><span class="glyphicon glyphicon-search"></span>
-                        </label>
                         <select name="" id="input" class="form-control" required="required">
                             <option value="">-- Seleccione un nivel</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">buscar</button>
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
                 </form>
             </div>
             <div class="table-responsive" style="margin-left:10px">
@@ -133,6 +163,12 @@
 
             <!-- TEAM SECTION END -->
         </footer>
+        <div class="row text-center" style="background:#070707; color: white">
+            <a href="itver.html#somos">¿Quienes somos?</a>
+            <a href="itver.html#mision">Misión</a>
+            <a href="itver.html#vision">Visión</a>
+            <a href="itver.html#valores">Valores</a>
+        </div>
         <div class="row text-center" style="background:#070707; color: white">
             <p>Calz. Miguel Ángel de Quevedo 2779, Col. Formando Hogar</p>
             <p>C.P. 91897, H. Veracruz, Ver.,</p>

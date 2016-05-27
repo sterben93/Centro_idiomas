@@ -34,7 +34,6 @@ function agregarContenidoPublicaiones(publicaciones) {
             'html': publicacion.Contenido.substring(0, 60)+"...", 'class':'container-fluid text-justify'
         });
         var elemP2 = $('<p/>');
-        alert(publicacion.Imagen);
         var elemA = $('<a/>', {
             'html': 'Ver mas..'
             , 'href': "http://localhost/Centro_Idiomas/publicacion.html#"+publicacion.idPublicaciones
@@ -79,7 +78,7 @@ function crearElemento(idioma, classB) {
 }
 
 function agregarRestante(idiomas, restante, long) {
-    console.log(restante);
+
     switch (restante) {
         case 1:
             var fila = $('<div/>', {
@@ -104,7 +103,6 @@ function agregarContenidoIdiomas(idiomas) {
     var restante = idiomas.length % 3;
     var long = 0;
     for (var i = 0; i < parseInt(row); i++) {
-        alert(i);
         var fila = $('<div/>', {
             'class': 'row'
         });
@@ -114,7 +112,6 @@ function agregarContenidoIdiomas(idiomas) {
         $("#listaIdiomas").append(fila);
     }
     agregarRestante(idiomas, restante, long);
-    console.log(row + " " + restante);
 }
 
 function agregarIdiomas() {
