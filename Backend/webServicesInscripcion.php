@@ -14,7 +14,7 @@ error_reporting(E_ALL | E_STRICT);
 error_reporting(0);
 ini_set('error_reporting', E_ALL);
 require './Table.php';
-require './fpdf181/fpdf.php';
+
 $opcion = $_POST['salida'];
 switch ($opcion) {
     //agregar inscrito
@@ -44,11 +44,11 @@ switch ($opcion) {
         $resultado = $t_Ins->insertar();
         $t_Ins->close();
 
-//        if ($resultado == "1") {
-//            header('Location: http://localhost/Centro_Idiomas/index.html');
-//        } else {
-//            header('Location: http://localhost/Centro_Idiomas/index.html');
-//        }
+        if ($resultado == "1") {
+            header('Location: http://localhost/Centro_Idiomas/index.html');
+        } else {
+            header('Location: http://localhost/Centro_Idiomas/index.html');
+        }
         break;
     case 2:
         $t_Ins = new Table(TABLA_INSCRIPCIONES);
@@ -73,13 +73,3 @@ switch ($opcion) {
         $t_Ins->close();
         break;
 }
-
-
-
-$pdf = new FPDF();
-        $pdf->AddPage();
-        $pdf->SetFont('Arial','B',16);
-        $pdf->Cell(40,10,'¡Hola, Mundo!');
-        $pdf->Output();
-        echo "Hola";
-
