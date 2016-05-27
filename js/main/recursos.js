@@ -24,7 +24,7 @@ var patron = {
     , Contraseña: /[A-Z][A-Z-a-z|0-9]{8,15}/
 };
 
-url_Backend="http://localhost/Backend/"
+url_Backend = "http://localhost/Backend/"
 /**
  *
  * @param {type} formulario

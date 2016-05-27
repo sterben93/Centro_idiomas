@@ -1,15 +1,15 @@
 /*Global var $*/
 function agregarElementos(docentes) {
     $.each(docentes, function (index, docente) {
-        var elemTr = $("<tr/>", {'id': index});
-        var elemTd = $("<td/>", {'html': docente.idDocente});
-        var elemTd2 = $("<td/>", {'html': docente.Nombre});
-        var elemTd2a = $("<td/>", {'html': docente.Apellidos});
-        var elemTd3 = $("<td/>", {'html': docente.Correo});
-        var elemTd4 = $("<td/>", {'html': docente.Telefono});
+        var elemTr = $("<tr/>", { 'id': index });
+        var elemTd = $("<td/>", { 'html': docente.idDocente });
+        var elemTd2 = $("<td/>", { 'html': docente.Nombre });
+        var elemTd2a = $("<td/>", { 'html': docente.Apellidos });
+        var elemTd3 = $("<td/>", { 'html': docente.Correo });
+        var elemTd4 = $("<td/>", { 'html': docente.Telefono });
         var elemTd7 = $("<td/>");
-        var elemSpan = $('<span/>', {'class': 'glyphicon glyphicon-edit'});
-        var elemSpan2 = $('<span/>', {'class': 'glyphicon glyphicon-remove'});
+        var elemSpan = $('<span/>', { 'class': 'glyphicon glyphicon-edit' });
+        var elemSpan2 = $('<span/>', { 'class': 'glyphicon glyphicon-remove' });
         var elemButton = $('<button/>', {
             'class': 'btn btn-default eliminar',
             'val': docente.idDocente,
@@ -69,12 +69,12 @@ function cargarComportamientos() {
 }
 
 function agregarContenido() {
-    $.post("http://localhost/Backend/webServicesDocentes.php", {salida: 4},
-    function (resultado) {
-        var $docentes = JSON.parse(resultado);
-        agregarElementos($docentes);
-        cargarComportamientos();
-    }
+    $.post("http://localhost/Backend/webServicesDocentes.php", { salida: 4 },
+        function (resultado) {
+            var $docentes = JSON.parse(resultado);
+            agregarElementos($docentes);
+            cargarComportamientos();
+        }
     );
 }
 

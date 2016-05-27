@@ -103,41 +103,73 @@
         </div>
         <!--/.container-->
     </section>
+    <script>
+        theTable = $("#latabla");
+		  $("#q").keyup(function() {
+			$.uiTableFilter(theTable, this.value);
+		  });
+    </script>
     <section>
         <div class="container box first" style="margin-top:10px;">
             <div class="row container center">
-                <form action="" method="POST" class="form-inline" role="form">
-                    <div class="form-group">
-                        <select name="" id="input" class="form-control" required="required">
-                            <option value="">-- Seleccione un nivel</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
-                </form>
+
             </div>
             <div class="table-responsive" style="margin-left:10px">
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="tablaCursos">
                     <thead>
                         <tr class="text-center" style="background:#008055; color:white;">
-                            <th style="border:solid 1px black;" class="text-center" colspan="3">Cursos</th>
+                            <th style="border:solid 1px black;" class="text-center">Cursos</th>
+                            <th style="border:solid 1px black;" class="text-center">Nivel</th>
+                            <th style="border:solid 1px black;" class="text-center">Horario</th>
+                            <th style="border:solid 1px black;" class="text-center">Salon</th>
+                            <th style="border:solid 1px black;" class="text-center">Inicio Curso</th>
+                            <th style="border:solid 1px black;" class="text-center">Fin Curso</th>
+                            <th style="border:solid 1px black;" class="text-center">Cupo</th>
+                            <th style="border:solid 1px black;" class="text-center">Inscritos</th>
                         </tr>
                     </thead>
-                    <tbody id="listaCurso">
-                        <td>fkjshfkshkfd</td>
-                        <td>
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-fullscreen"></span>
-                            </button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
-                            </button>
-                        </td>
+                    <tbody id="listaCursos">
                         <!--El contenido de la tabla se genera a partir de JQwery-->
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
+    <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Registrar Idioma</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!--Inicio del formulario para registrar idiomas-->
+                                    <form action="http://localhost/Backend/webServicesIdiomas.php" method="POST" role="form" id="formRegistroIdioma" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="idioma">Idioma</label>
+                                            <input type="text" class="form-control" id="idioma" name="Idioma" placeholder="Idioma" required>
+                                            <label for="niveles">Niveles</label>
+                                            <input type="text" class="form-control" id="niveles" name="Niveles" placeholder="Niveles" required>
+                                            <label for="objetivo">Objetivo del curso</label>
+                                            <textarea name="Objetivo" id="objetivo" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="perfil_ingreso">Perfil de Ingreso</label>
+                                            <textarea name="Perfil_Ingreso" id="perfil_ingreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="prefil_egreso">Perfil de Egreso</label>
+                                            <textarea name="Perfil_Egreso" id="prefil_egreso" class="form-control" rows="3" required="required"></textarea>
+                                            <label for="prefil_egreso">Imagen</label>
+                                            <input type="file" name="Imagen">
+                                            <input type="text" value=1 name="salida" style="display:none">
+                                        </div>
+                                    </form>
+                                    <!--Fin del formulario para registrar idiomas-->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" form="formRegistroIdioma">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     <!--/#services-->
     <style>
         div > footer {

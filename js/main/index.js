@@ -1,7 +1,7 @@
 function agregarPublicaciones() {
     $.post("http://localhost/Backend/webServicesPublicaciones.php", {
-            opcion: 2
-        }
+        opcion: 2
+    }
         , function (resultado) {
             var $publicaciones = JSON.parse(resultado);
             agregarContenidoPublicaiones($publicaciones);
@@ -21,17 +21,17 @@ function agregarContenidoPublicaiones(publicaciones) {
             'src': publicacion.Imagen
             , 'alt': 'noticia ' + index
             , 'class': 'imagen',
-            'height':'200px'
+            'height': '200px'
         });
         var elemDiv3 = $('<div/>', {
-            'class': 'caption', height:'200'
+            'class': 'caption', height: '200'
         });
         var elemH3 = $('<h3/>', {
-            'html': publicacion.Titulo.substring(0, 15)+'...'
+            'html': publicacion.Titulo.substring(0, 15) + '...'
             , class: 'container-fluid center'
         });
         var elemP = $('<p/>', {
-            'html': publicacion.Contenido.substring(0, 60)+"...", 'class':'container-fluid text-justify'
+            'html': publicacion.Contenido.substring(0, 60) + "...", 'class': 'container-fluid text-justify'
         });
         var elemP2 = $('<p/>');
         var elemA = $('<a/>', {

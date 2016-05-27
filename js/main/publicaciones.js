@@ -2,11 +2,11 @@ function agregarPublicaciones() {
     $.post("http://localhost/Backend/webServicesPublicaciones.php", {
         opcion: 2
     }
-    , function (resultado) {
-        var $publicaciones = JSON.parse(resultado);
-        agregarContenido($publicaciones);
-        cargarComportamientos();
-    }
+        , function (resultado) {
+            var $publicaciones = JSON.parse(resultado);
+            agregarContenido($publicaciones);
+            cargarComportamientos();
+        }
     );
 }
 
