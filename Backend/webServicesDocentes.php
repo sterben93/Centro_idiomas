@@ -44,7 +44,7 @@ switch ($opcion) {
             header('Location: http://localhost/Centro_Idiomas/docentes.html#error');
         }
         break;
-    //Modificar Idioma
+    //Modificar Docente
     case 2:
         $t_Docente = new Table(TABLA_DOCENTES);
         $t_Docente->conectar();

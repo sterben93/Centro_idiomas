@@ -60,9 +60,9 @@ switch ($opcion) {
             $row = mysqli_fetch_array($t_Cursos->query('select * from ' .
                             $t_Cursos->nombre_Table() . ' where ' . ID_CURSOS . " ='" . $curso . "';"));
             $t_Cursos->close();
-            $pdf->Cell(40, 10, utf8_decode("CURSO: ".utf8_encode($row[NOMBRE_CURSO])), 0, 1);
+            $pdf->Cell(40, 10, utf8_decode("CURSO: " . utf8_encode($row[NOMBRE_CURSO])), 0, 1);
             $pdf->Cell(40, 10, utf8_decode("SEMESTRE: $semestre"), 0, 1);
-            $pdf->Cell(40, 10, utf8_decode("HORARIO: ".utf8_encode($row[HORARIO])), 0, 1);
+            $pdf->Cell(40, 10, utf8_decode("HORARIO: " . utf8_encode($row[HORARIO])), 0, 1);
             $pdf->Cell(40, 10, "", 0, 1);
             $pdf->Cell(40, 10, "", 0, 1);
             $pdf->Cell(180, 10, utf8_decode("INSTRUCCIONES:"), 1, 1, 'C');
@@ -78,7 +78,7 @@ switch ($opcion) {
             echo 'Error en la conexion de la Base de Datos';
         }
         break;
-        //ver inscritos
+    //ver inscritos
     case 2:
         $t_Ins = new Table(TABLA_INSCRIPCIONES);
         $t_Ins->conectar();
@@ -96,11 +96,40 @@ switch ($opcion) {
                 APELLIDO_MATERNO => utf8_encode($row1[APELLIDO_MATERNO]),
                 CARRERA => utf8_encode($row1[CARRERA]),
                 SEMESTRE => utf8_encode($row1[SEMESTRE]),
-                CURSOS_ID_CURSOS => utf8_encode($row1[CURSOS_ID_CURSOS])];
+                CURSOS_ID_CURSOS => utf8_encode(nombre_Curso($row1[CURSOS_ID_CURSOS]))];
         }
         echo json_encode(array_values($json));
         $t_Ins->close();
         break;
+    case 3:
+        $t_Ins = new Table(TABLA_INSCRIPCIONES);
+        $t_Ins->conectar();
+        $t_Ins->select_database();
+        $id = $_POST[ID_INSCRIPCIONES];
+        $where = ID_INSCRIPCIONES . "='" . $id . "';";
+        $t_Ins->delete($where);
+        $t_Ins->close();
+        break;
+    case 4:
+        $t_Ins = new Table(TABLA_INSCRIPCIONES);
+        $t_Ins->conectar();
+        $t_Ins->select_database();
+        $id = $_POST[ID_INSCRIPCIONES];
+        $set = STATUS . "='1'";
+        $where = ID_INSCRIPCIONES . "='" . $id . "';";
+        $t_Ins->update($set, $where);
+        $t_Ins->close();
 }
+
+function nombre_Curso($id) {
+    $t_Cursos = new Table(TABLA_CURSOS);
+    $t_Cursos->conectar();
+    $t_Cursos->select_database();
+    $query = 'select ' . NOMBRE_CURSO . ' from ' . $t_Cursos->nombre_Table() . ' where ' . ID_CURSOS . " = '" . $id . "';";
+    $resultado = $t_Cursos->query($query);
+    $row1 = mysqli_fetch_array($resultado);
+    return $row1[NOMBRE_CURSO];
+}
+
 ?>
 

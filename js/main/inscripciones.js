@@ -1,10 +1,13 @@
 $(document).ready(function ($) {
+    cargar();
+});
+function cargar() {
     $.post("http://localhost/Backend/webServicesInscripcion.php", { salida: 2 }, function (resp) {
         var inscritos = JSON.parse(resp);
         agreagrInscritos(inscritos);
+        cargarComp();
     })
-});
-
+}
 function agreagrInscritos(inscritos) {
     $.each(inscritos, function (index, ins) {
         var elemTr = $("<tr/>", {
@@ -33,7 +36,7 @@ function agreagrInscritos(inscritos) {
         });
 
         var elemTd8 = $("<td/>");
-        if(ins.Status=="0"){
+        if (ins.Status == "0") {
             var elemSpan = $('<span/>', {
                 'class': 'glyphicon glyphicon-ok'
             });
@@ -84,17 +87,39 @@ function agreagrInscritos(inscritos) {
         elemTr.append(elemTd7);
         elemTr.append(elemTd8);
         $("#listaIncriptos").append(elemTr);
-        cargarComp());
+
     })
 }
 
-function cargarComp(){
-
+function cargarComp() {
+    $('#eliminar').click(function () {
+        $.post("http://localhost/Backend/webServicesInscripcion.php", {
+            salida: 3,
+            idInscripciones: $cookie('id')
+        }, function (resp) {
+            $("#listaIncriptos").html("");
+            cargar();
+            $('.modal').modal('hide')
+        });
+    });
+    $('.eliminar').click(function () {
+        $cookie('id', this.value);
+    });
+    $('.insc').click(function(){
+        $.post("http://localhost/Backend/webServicesInscripcion.php", {
+            salida: 4,
+            idInscripciones: this.value
+        }, function (resp) {
+            $("#listaIncriptos").html("");
+            cargar();
+            $('.modal').modal('hide')
+        });
+    })
 }
-function status(st){
-    if(st=="0"){
+function status(st) {
+    if (st == "0") {
         return "Pendiente";
-    }else{
+    } else {
         return 'Aceptado'
     }
 }
