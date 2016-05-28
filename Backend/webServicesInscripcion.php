@@ -17,14 +17,13 @@ require './Table.php';
 
 $opcion = $_POST['salida'];
 switch ($opcion) {
-    //agregar inscrito
+//agregar inscrito
     case 1:
         $time = time();
         $fecha = date("Y-m-d", $time);
         $status = 0;
         $n_Control = $_POST[N_CONTROL];
         $nombre = $_POST[NOMBRE];
-
         $apellidos_Array = preg_split("/[\s]+/", $_POST['Apellidos']);
         $carrera = $_POST[CARRERA];
         $semestre = $_POST[SEMESTRE];
@@ -43,13 +42,43 @@ switch ($opcion) {
         $t_Ins->set(CURSOS_ID_CURSOS, $curso);
         $resultado = $t_Ins->insertar();
         $t_Ins->close();
-
         if ($resultado == "1") {
-            header('Location: http://localhost/Centro_Idiomas/index.html');
+            ob_start();
+            require './PDF.php';
+            $pdf = new PDF();
+            $pdf->AddPage();
+            $pdf->SetMargins(15, 20, 10);
+            $pdf->SetFont('Times', '', 12);
+            $pdf->Cell(40, 10, "", 0, 1);
+            $pdf->Cell(0, 10, utf8_decode("FECHA: $fecha"), 0, 1, 'R');
+            $pdf->Cell(40, 10, utf8_decode("N° CONTROL: $n_Control"), 0, 1);
+            $pdf->Cell(40, 10, utf8_decode("NOMBRE: $nombre" . " " . $apellidos_Array[0] . " " . $apellidos_Array[0]), 0, 1);
+            $pdf->Cell(40, 10, utf8_decode("CARRERA: $carrera"), 0, 1);
+            $t_Cursos = new Table(TABLA_CURSOS);
+            $t_Cursos->conectar();
+            $t_Cursos->select_database();
+            $row = mysqli_fetch_array($t_Cursos->query('select * from ' .
+                            $t_Cursos->nombre_Table() . ' where ' . ID_CURSOS . " ='" . $curso . "';"));
+            $t_Cursos->close();
+            $pdf->Cell(40, 10, utf8_decode("CURSO: ".utf8_encode($row[NOMBRE_CURSO])), 0, 1);
+            $pdf->Cell(40, 10, utf8_decode("SEMESTRE: $semestre"), 0, 1);
+            $pdf->Cell(40, 10, utf8_decode("HORARIO: ".utf8_encode($row[HORARIO])), 0, 1);
+            $pdf->Cell(40, 10, "", 0, 1);
+            $pdf->Cell(40, 10, "", 0, 1);
+            $pdf->Cell(180, 10, utf8_decode("INSTRUCCIONES:"), 1, 1, 'C');
+            $pdf->Cell(180, 10, utf8_decode("1. BAJAR E IMPRIMIR ESTE FORMATO POR CURSO."), 1, 1, 'C');
+            $pdf->Cell(180, 10, utf8_decode("2. REALIZAR PAGO EN EL BANCO."), 1, 1, 'C');
+            $pdf->Cell(180, 10, utf8_decode("3. SACAR 2 FOTOCOPIAS AL VOUCHER"), 1, 1, 'C');
+            $pdf->Cell(180, 10, utf8_decode("4. ENTREGAR EL ORIGINAL EN RECURSOS FINANCIEROS Y SELLAR LAS 2 FOTOCOPIAS."), 1, 1, 'C');
+            $pdf->Cell(180, 10, utf8_decode("5. ENTREGAR COPIA SELLADA AL COORDINADOR DE IDIOMAS"), 1, 1, 'C');
+            $pdf->Cell("");
+            $pdf->Output();
+            ob_end_flush();
         } else {
-            header('Location: http://localhost/Centro_Idiomas/index.html');
+            echo 'Error en la conexion de la Base de Datos';
         }
         break;
+        //ver inscritos
     case 2:
         $t_Ins = new Table(TABLA_INSCRIPCIONES);
         $t_Ins->conectar();
@@ -73,3 +102,5 @@ switch ($opcion) {
         $t_Ins->close();
         break;
 }
+?>
+

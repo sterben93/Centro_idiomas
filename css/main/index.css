@@ -199,3 +199,7 @@ a:focus {
 #footer {
   background: white;
 }
+
+div#carousel-content>h1{
+    color: black;
+}

@@ -34,7 +34,7 @@
             <div class="item active">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1> Centro de Idioma del Instituto Tecnologico de Veracruz </h1>
+                        <h1 style="color:black"> Centro de Idioma del Instituto Tecnologico de Veracruz </h1>
                     </div>
                 </div>
             </div>
@@ -55,13 +55,15 @@
             <div class="box first">
                 <div class="row" id="cont_Idioma">
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 center">
-                        <img class="img-circle" alt="Cinque Terre" width="100"  id="imagen">
+                        <img class="img-circle" alt="Cinque Terre" width="100" id="imagen">
                     </div>
                     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                         <h2 id="idioma"></h2>
                     </div>
                     <style>
-                        #objetivo, #Perfil_Ingreso, #Perfil_Egreso{
+                        #objetivo,
+                        #Perfil_Ingreso,
+                        #Perfil_Egreso {
                             color: black;
                             padding: 15px;
                             font-size: 14px;
@@ -81,8 +83,8 @@
                                 <h3>Perfil de Ingreso</h3>
                             </div>
                             <div class="row text-justify">
-                               <ul id="Perfil_Ingreso"></ul>
-                                <p ></p>
+                                <ul id="Perfil_Ingreso"></ul>
+                                <p></p>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -100,12 +102,6 @@
         </div>
         <!--/.container-->
     </section>
-    <script>
-        theTable = $("#latabla");
-		  $("#q").keyup(function() {
-			$.uiTableFilter(theTable, this.value);
-		  });
-    </script>
     <section>
         <div class="container box first" style="margin-top:10px;">
             <div class="row container center">
@@ -133,39 +129,39 @@
         </div>
     </section>
     <div class="modal fade" id="modalIns" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Inscribirse a Curso</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <!--Inicio del formulario para registrar idiomas-->
-                                    <form action="http://localhost/Backend/webServicesInscripcion.php" method="POST" role="form" id="formRegistroIdioma">
-                                        <div class="form-group">
-                                            <label for="N_Control">N° Control</label>
-                                            <input type="text" class="form-control" id="N_Control" name="N_Control" placeholder="E12312311" required>
-                                            <label for="Nombre">Nombre</label>
-                                            <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" required>
-                                            <label for="Apellidos">Apellidos</label>
-                                            <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos" required>
-                                            <label for="Carrera">Carrera</label>
-                                            <input type="text" class="form-control" id="Carrera" name="Carrera" placeholder="Carrera" required>
-                                            <label for="Semestre">Semestre</label>
-                                            <input type="text" class="form-control" id="Semestre" name="Semestre" placeholder="Semestre" required>
-                                            <input type="text" id="Cursos" name="Cursos_idCursos" style="display:none">
-                                            <input type="text" value=1 name="salida" style="display:none">
-                                        </div>
-                                    </form>
-                                    <!--Fin del formulario para registrar idiomas-->
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary" form="formRegistroIdioma">Aceptar</button>
-                                </div>
-                            </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Inscribirse a Curso</h4>
+                </div>
+                <div class="modal-body">
+                    <!--Inicio del formulario para registrar idiomas-->
+                    <form action="http://localhost/Backend/webServicesInscripcion.php" method="POST" role="form" id="formRegistroIdioma">
+                        <div class="form-group">
+                            <label for="N_Control">N° Control</label>
+                            <input type="text" class="form-control" id="N_Control" name="N_Control" placeholder="E12312311" required>
+                            <label for="Nombre">Nombre</label>
+                            <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" required>
+                            <label for="Apellidos">Apellidos</label>
+                            <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos" required>
+                            <label for="Carrera">Carrera</label>
+                            <input type="text" class="form-control" id="Carrera" name="Carrera" placeholder="Carrera" required>
+                            <label for="Semestre">Semestre</label>
+                            <input type="text" class="form-control" id="Semestre" name="Semestre" placeholder="Semestre" required>
+                            <input type="text" id="Cursos" name="Cursos_idCursos" style="display:none">
+                            <input type="text" value=1 name="salida" style="display:none">
                         </div>
-                    </div>
+                    </form>
+                    <!--Fin del formulario para registrar idiomas-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" form="formRegistroIdioma">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--/#services-->
     <style>
         div > footer {

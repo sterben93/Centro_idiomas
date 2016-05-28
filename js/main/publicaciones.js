@@ -79,9 +79,9 @@ function cargarComportamientos() {
     $('.editar').click(function () {
         var elemento = 'tr#' + this.value + ' > td';
         var inputEdit = ["form#formUpdate > div > #idPublicaciones"
-                    , "form#formUpdate > div > input#Titulo"
-                    , "form#formUpdate > div > textarea#Contenido"
-                    , ];
+            , "form#formUpdate > div > input#Titulo"
+            , "form#formUpdate > div > textarea#Contenido"
+            ,];
         $(elemento).each(function (number, td) {
             if (number < 4) {
                 $(inputEdit[number]).val(td.innerHTML);

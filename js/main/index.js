@@ -36,7 +36,7 @@ function agregarContenidoPublicaiones(publicaciones) {
         var elemP2 = $('<p/>');
         var elemA = $('<a/>', {
             'html': 'Ver mas..'
-            , 'href': "http://localhost/Centro_Idiomas/publicacion.html#"+publicacion.idPublicaciones
+            , 'href': "http://localhost/Centro_Idiomas/publicacion.html#" + publicacion.idPublicaciones
         });
         elemDiv2.append(elemIMg);
         elemP2.append(elemA);
@@ -116,8 +116,8 @@ function agregarContenidoIdiomas(idiomas) {
 
 function agregarIdiomas() {
     $.post("http://localhost/Backend/webServicesIdiomas.php", {
-            salida: 4
-        }
+        salida: 4
+    }
         , function (resultado) {
             var idiomas = JSON.parse(resultado);
             agregarContenidoIdiomas(idiomas);

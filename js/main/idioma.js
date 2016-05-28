@@ -15,9 +15,9 @@ $(document).ready(function ($) {
         crearLista($("#Perfil_Egreso"), idioma.Perfil_Egreso.split("\n"));
     });
     $.post("http://localhost/Backend/webServicesCursos.php", {
-            salida: 3
-            , idIdiomas: id[1]
-        }
+        salida: 3
+        , idIdiomas: id[1]
+    }
         , function (resultado) {
             var cursos = JSON.parse(resultado);
             agregarElementos(cursos);

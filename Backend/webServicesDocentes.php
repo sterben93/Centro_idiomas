@@ -92,7 +92,7 @@ switch ($opcion) {
         echo json_encode(array_values($json));
         $t_Docente->close();
         break;
-    //Obtener un idioma
+    //Obtener un docente
     case 4:
         break;
 }

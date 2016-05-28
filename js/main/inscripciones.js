@@ -1,13 +1,13 @@
-$(document).ready(function($){
-    $.post("http://localhost/Backend/webServicesInscripcion.php", {salida:2},function(resp){
+$(document).ready(function ($) {
+    $.post("http://localhost/Backend/webServicesInscripcion.php", { salida: 2 }, function (resp) {
         var inscritos = JSON.parse(resp);
         agreagrInscritos(inscritos);
     })
 });
 
-function agreagrInscritos(inscritos){
-    $.each(inscritos, function(index, ins){
-      var elemTr = $("<tr/>", {
+function agreagrInscritos(inscritos) {
+    $.each(inscritos, function (index, ins) {
+        var elemTr = $("<tr/>", {
             'id': index
         });
         var elemTd = $("<td/>", {
@@ -17,7 +17,7 @@ function agreagrInscritos(inscritos){
             'html': ins.N_Control
         });
         var elemTd3 = $("<td/>", {
-            'html': ins.Nombre+" "+ins.Apellido_Paterno+" "+ins.Apellido_Materno
+            'html': ins.Nombre + " " + ins.Apellido_Paterno + " " + ins.Apellido_Materno
         });
         var elemTd4 = $("<td/>", {
             'html': ins.Carrera
@@ -28,8 +28,10 @@ function agreagrInscritos(inscritos){
         var elemTd6 = $("<td/>", {
             'html': ins.Cursos_idCursos
         });
-
-        var elemTd7 = $("<td/>");
+        var elemTd7 = $("<td/>", {
+            'html': ins.Status
+        });
+        var elemTd8 = $("<td/>");
         var elemSpan = $('<span/>', {
             'class': 'glyphicon glyphicon-ok'
         });
@@ -43,7 +45,7 @@ function agreagrInscritos(inscritos){
         });
 
         elemButton.append(elemSpan);
-        elemTd7.append(elemButton);
+        elemTd8.append(elemButton);
         elemTr.append(elemTd);
         elemTr.append(elemTd2);
         elemTr.append(elemTd3);
@@ -51,6 +53,7 @@ function agreagrInscritos(inscritos){
         elemTr.append(elemTd5);
         elemTr.append(elemTd6);
         elemTr.append(elemTd7);
+        elemTr.append(elemTd8);
         $("#listaIncriptos").append(elemTr);
 
     })
