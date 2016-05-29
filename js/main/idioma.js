@@ -23,8 +23,9 @@ $(document).ready(function ($) {
             agregarElementos(cursos);
         }
     );
+    $('input').change(cambioInput);
 
-
+    $('#bt_Solicitud').click(verificaInput);
 });
 
 function crearLista(elem, lista) {
@@ -61,25 +62,33 @@ function agregarElementos(cursos) {
         var elemTd5 = $("<td/>", {
             'html': curso.salon
         });
-        //var elemTd6 = $("<td/>", {'html': curso.Fec_Inicio_Insc});
-        //var elemTd7 = $("<td/>", {'html': curso.Fec_Fin_Insc});
         var elemTd8 = $("<td/>", {
             'html': curso.Fecha_Inicio_Curso
         });
         var elemTd9 = $("<td/>", {
             'html': curso.Fecha_Fin_Curso
         });
-        var elemTd10 = $("<td/>", {
-            'html': curso.Capacidad
-        });
-        var elemTd11 = $("<td/>", {
-            'html': curso.Inscritos
-        });
+
+        var fecha = curso.Fec_Inicio_Insc;
+        var fecha2 = curso.Fec_Fin_Insc;
+        alert(fecha+" "+fecha2)
+        var hoy = new Date();
+        var array_fecha = fecha.split("-");
+        var dia = array_fecha[2];
+        var mes = (array_fecha[1] - 1);
+        var ano = (array_fecha[0]);
+        alert(dia+" "+mes+" "+ano)
+        var fechaDate = new Date(ano, mes, dia);
+        array_fecha2 = fecha2.split("-");
+        dia = array_fecha2[2];
+        mes = (array_fecha2[1] - 1);
+        ano = (array_fecha2[0]);
+        var fechaDate2 = new Date(ano, mes, dia);
         var elemTd12 = $("<td/>");
-        var elemSpan = $('<span/>', {
+        if(fechaDate<hoy && fechaDate2>hoy){
+            var elemSpan = $('<span/>', {
             'class': 'glyphicon glyphicon-edit'
         });
-
         var elemButton = $('<button/>', {
             'class': 'btn btn-default insc'
             , 'val': curso.idCursos
@@ -87,17 +96,19 @@ function agregarElementos(cursos) {
             , 'data-toggle': 'modal'
             , 'data-target': '#modalIns'
         });
-
         elemButton.append(elemSpan);
+        elemButton.html(elemButton.html()+" Inscripción");
         elemTd12.append(elemButton);
+        }else{
+           elemTd12.html("Inscripciones al curso finalizadas");
+        }
+
         elemTr.append(elemTd2);
         elemTr.append(elemTd3);
         elemTr.append(elemTd4);
         elemTr.append(elemTd5);
         elemTr.append(elemTd8);
         elemTr.append(elemTd9);
-        elemTr.append(elemTd10);
-        elemTr.append(elemTd11);
         elemTr.append(elemTd12);
         $('#listaCursos').append(elemTr);
         $('.insc').click(function () {

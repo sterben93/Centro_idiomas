@@ -16,6 +16,7 @@
     <script type="application/javascript" src="js/angular.min.js"></script>
     <script type="application/javascript" src="js/angular-route.min.js"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
+    <script type="application/javascript" src="js/main/recursos.js"></script>
     <script type="application/javascript" src="js/main/idioma.js"></script>
 
 </head>
@@ -25,8 +26,6 @@
     <header id="header" role="banner" ng-include src="'header.html'">
 
     </header>
-
-
     <!-- Fin del Header -->
     <!-- Inicio del Slider -->
     <section id="main-slider" class="carousel">
@@ -117,8 +116,7 @@
                             <th style="border:solid 1px black;" class="text-center">Salon</th>
                             <th style="border:solid 1px black;" class="text-center">Inicio Curso</th>
                             <th style="border:solid 1px black;" class="text-center">Fin Curso</th>
-                            <th style="border:solid 1px black;" class="text-center">Cupo</th>
-                            <th style="border:solid 1px black;" class="text-center">Inscritos</th>
+                            <th style="border:solid 1px black;" class="text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="listaCursos">
@@ -140,30 +138,33 @@
                     <form action="http://localhost/Backend/webServicesInscripcion.php" method="POST" role="form" id="formRegistroIdioma">
                         <div class="form-group">
                             <label for="N_Control">N° Control</label>
-                            <input type="text" class="form-control" id="N_Control" name="N_Control" placeholder="E12312311" required>
+                            <input type="text" class="form-control" id="N_Control" name="N_Control" placeholder="ejem: E12312311" required>
                             <label for="Nombre">Nombre</label>
-                            <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Nombre" required>
+                            <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="ejem: Monica" required>
                             <label for="Apellidos">Apellidos</label>
-                            <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos" required>
+                            <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="ejem: Celis Lopez" required>
                             <label for="Carrera">Carrera</label>
-                            <input type="text" class="form-control" id="Carrera" name="Carrera" placeholder="Carrera" required>
+                            <input type="text" class="form-control" id="Carrera" name="Carrera" placeholder="ejem: Administración" required>
                             <label for="Semestre">Semestre</label>
-                            <input type="text" class="form-control" id="Semestre" name="Semestre" placeholder="Semestre" required>
+                            <input type="number" class="form-control" id="Semestre" name="Semestre" placeholder="ejem: 4" required>
                             <input type="text" id="Cursos" name="Cursos_idCursos" style="display:none">
-                            <input type="text" value=1 name="salida" style="display:none">
+                            <input type="number" value="1"" name="salida" style="display:none">
                         </div>
                     </form>
                     <!--Fin del formulario para registrar idiomas-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" form="formRegistroIdioma">Aceptar</button>
+                    <button type="submit" class="btn btn-primary" form="formRegistroIdioma" id="bt_Solicitud">Aceptar</button>
                 </div>
             </div>
         </div>
     </div>
     <!--/#services-->
     <style>
+        td{
+            color: black;
+        }
         div > footer {
             background: red;
             margin-top: 10px;
@@ -175,14 +176,14 @@
             height: 50%;
         }
 
-        #footer {
+        #footerEquipo {
             background: #34343b;
             background-position: center;
             background-size: cover;
         }
     </style>
     <div class="container-fluid" id="footer">
-        <footer id="footer" class="row text-center" style="color:white" ng-include src="'equipo.html'">
+        <footer id="footerEquipo" class="row text-center" style="color:white" ng-include src="'equipo.html'">
             <!-- TEAM SECTION START -->
 
             <!-- TEAM SECTION END -->
